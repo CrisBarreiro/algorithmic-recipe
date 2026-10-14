@@ -4,7 +4,7 @@ Turn any recipe into a table you can actually cook from.
 
 Ingredients are listed down the left in the order you add them. Each step sits to the right and stretches over everything already in the bowl, so you always see what is in the mixture and what comes next. Read it left to right like a program.
 
-![Espresso brownies as an algorithmic recipe](docs/espresso-brownies.png)
+![Espresso brownies as an algorithmic recipe](assets/espresso-brownies.png)
 
 ## Why it's useful
 
@@ -58,6 +58,6 @@ algorithmic-recipe/
 │       └── SKILL.md          the skill itself (what Claude loads)
 ├── examples/
 │   └── espresso-brownies.html
-└── docs/
+└── assets/
     └── espresso-brownies.png screenshot used in this README
 ```

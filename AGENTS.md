@@ -20,7 +20,7 @@ When a user asks you to install this skill:
 | `.claude-plugin/plugin.json` | Plugin manifest. |
 | `.claude-plugin/marketplace.json` | Makes the repo its own marketplace. |
 | `examples/espresso-brownies.html` | Reference output. |
-| `docs/espresso-brownies.png` | Screenshot of the example, used in `README.md`. |
+| `assets/espresso-brownies.png` | Screenshot of the example, used in `README.md`. |
 | `README.md` | User-facing overview. |
 | `INSTALL.md` | Every install, update and uninstall route. |
 
