@@ -1,0 +1,1 @@
+{"name": "algorithmic-recipe", "description": "Rewrites any recipe as an \"algorithmic\" cumulative table (ingredient rows in order of addition, merged step cells in a staircase) as a phone-friendly light/dark HTML page."}
