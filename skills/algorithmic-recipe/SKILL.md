@@ -11,7 +11,7 @@ If the session is attached to the "Recipes" project, pages in `recipes/` are the
 
 ## Workflow
 
-1. **Parse.** Read the whole source (URL or attachment included). Collect title, serves, prep / cook / bake times, ingredients with quantities, every instruction and tip, storage, variations and photos. Omit any time the source does not give.
+1. **Parse.** Read the whole source (URL or attachment included). Collect title, serves, prep / cook / bake times, ingredients with quantities, every instruction and tip, storage, variations and photos. Omit any time the source does not give. If the source is a URL, keep it for the source link.
 2. **Order the rows.** List each ingredient when it first enters a bowl or pan. Split one into two rows when part is used now and the rest later.
 3. **Plan the columns.** One per step, in order. Steps with no ingredients become full-width rows on top; steps done in a separate bowl get their own cell in the empty lower-left.
 4. **Write the HTML** from the skeleton below, run the grid check and fix what it reports.
@@ -35,7 +35,7 @@ Example (`examples/espresso-brownies.html`): rows are butter, sugar, vanilla, es
 - **Keep every detail.** Every technique, time, temperature, visual cue and "why" tip survives; only ingredient lists the grid already shows are dropped.
 - **Reword**; do not copy the source's sentences. Numbers and cues ("amber, nutty smell, dark specks") stay exact.
 - **Tips** go under their step in `<span class="tip">...</span>`.
-- **Around the table**: above it, the `h1`, a `.meta` list (serves, prep, cook, bake; only those given), an optional `.photos` grid, then the `.hint`. Below it, `<p class="store"><b>Storage</b> ...</p>` and a `.twist` box for variations.
+- **Around the table**: above it, the `h1`, a `<p class="src">` link to the original when the source is a URL, a `.meta` list (serves, prep, cook, bake; only those given), an optional `.photos` grid, then the `.hint`. Below it, `<p class="store"><b>Storage</b> ...</p>` and a `.twist` box for variations.
 
 ## Output
 
@@ -62,6 +62,8 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,6vw,2.4rem)
 .meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0 0 8px;padding:0;list-style:none;font-size:13px;color:var(--muted)}
 .meta b{font-family:var(--mono);font-weight:500;color:var(--ink);font-size:13px;margin-right:4px}
 .hint{margin:0 0 16px;font-size:13px;color:var(--muted)}
+.src{margin:-6px 0 10px;font-size:13px;color:var(--muted)}
+.src a{color:var(--accent)}
 .photos{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:8px;margin:0 0 16px}
 .photos figure{margin:0;min-width:0;position:relative}
 .photos img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;background:var(--tint)}
@@ -85,6 +87,8 @@ td.gap{border:0;background:var(--bg);padding:0}
 </style>
 <main>
 <h1>Recipe title</h1>
+<!-- only when the source is a URL; link text is the site or author name -->
+<p class="src">Original recipe: <a href="https://example.com/recipe">Site name</a></p>
 <ul class="meta"><li><b>8</b>serves</li><li><b>30 min</b>prep</li><li><b>6 min</b>cook</li><li><b>28 min</b>bake</li></ul>
 <p class="hint">Ingredients are listed in the order they go in. Each step covers every ingredient beside it, and the steps run left to right. Scroll sideways on a phone.</p>
 <div class="wrap">
