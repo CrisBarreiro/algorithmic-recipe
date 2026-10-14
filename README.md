@@ -14,7 +14,7 @@ Ingredients are listed down the left in the order you add them. Each step sits t
 - **Nothing lost in translation.** Every temperature, time, visual cue and "why" tip from the original is kept (reworded, not copied).
 - **Works on a phone.** Light and dark mode, and the ingredient column stays pinned while the table scrolls sideways.
 
-See [`examples/espresso-brownies.html`](examples/espresso-brownies.html) for the full page behind the screenshot above.
+See the [full espresso brownies page](https://crisbarreiro.com/algorithmic-recipe/examples/espresso-brownies.html) behind the screenshot above (source in [`examples/espresso-brownies.html`](examples/espresso-brownies.html)).
 
 ## Install
 
