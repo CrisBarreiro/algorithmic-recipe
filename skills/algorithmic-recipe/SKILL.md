@@ -5,53 +5,46 @@ description: "Rewrites any recipe as an \"algorithmic\" cumulative table (ingred
 
 # Algorithmic recipe
 
-An algorithmic recipe is a grid where you can see, at every step, exactly what is already in the bowl. Ingredients are rows in the order they are added; each step is a cell to the right whose height covers every ingredient used so far. The result is a staircase. Cooks read it left to right like a program and glance down a column to know what is in the mixture. When a layout decision is unclear, remember the purpose: "what is in the bowl right now?" must be answerable at a glance.
+A grid that shows, at every step, what is already in the bowl. Ingredients are rows in order of addition; each step is a cell to the right spanning every ingredient used so far, so the steps form a staircase read left to right. When a layout choice is unclear, pick whatever keeps "what is in the bowl now?" answerable at a glance.
 
-If the session is attached to the "Recipes" project, existing pages in `recipes/` (e.g. `examples/espresso-brownies.html` in this repo) are the reference for look and structure; read one with project_read if in doubt, and save new recipes there with project_write at `recipes/<slug>.html`.
+If the session is attached to the "Recipes" project, pages in `recipes/` are the style reference (read one with project_read) and new pages go there with project_write at `recipes/<slug>.html`. Otherwise `examples/espresso-brownies.html` in this repo is the reference.
 
 ## Workflow
 
-1. **Parse the recipe.** Collect title, serves, prep / cook / bake times, ingredients with quantities, every instruction, every tip or "why" note, storage, and extras (variations, photos). If the source is a URL or attachment, read it fully first. If a time is missing, omit that item rather than inventing it.
-2. **Find the order of addition.** Walk through the method and list each ingredient at the moment it enters a bowl or pan. That is the row order. Split an ingredient into two rows when only part is used at one step and the rest later (most of the chocolate folded in, the rest kept for the top).
-3. **Plan the columns.** One column per step, in the order steps happen. Steps with no ingredient go in full-width rows above the grid. Steps done separately (dry ingredients whisked in their own bowl) get their own cell in the empty lower-left area.
-4. **Compute spans**, write the HTML from the skeleton below, and run the grid check (below). Fix anything it reports.
+1. **Parse.** Read the whole source (URL or attachment included). Collect title, serves, prep / cook / bake times, ingredients with quantities, every instruction and tip, storage, variations and photos. Omit any time the source does not give.
+2. **Order the rows.** List each ingredient when it first enters a bowl or pan. Split one into two rows when part is used now and the rest later.
+3. **Plan the columns.** One per step, in order. Steps with no ingredients become full-width rows on top; steps done in a separate bowl get their own cell in the empty lower-left.
+4. **Write the HTML** from the skeleton below, run the grid check and fix what it reports.
 5. **Deliver** (see Output).
 
 ## Layout rules
 
-- **No-ingredient prep steps** (lining or greasing a tin, preheating) are full-width rows at the very top, one per row: `<td class="top" colspan="N"><div>...</div></td>`. The inner div is sticky so the text stays readable while the table scrolls sideways. N = number of `<col>`s.
-- **Ingredient column** (leftmost, sticky, `td.ing`): one row per ingredient, quantity first in `<span class="q">`, metric first with imperial in brackets when the source gives both (`200g (1¾ sticks)`).
-- **Step cells** sit to the right, left to right in order. A step cell starts at the first ingredient row and runs down through the last ingredient added up to that point (its `rowspan`). "Melt" covers only the butter row; the first "mix" covers butter through the last ingredient added with it; each later step is taller. Final steps (bake, cool, slice) cover every row.
-- **Separately prepared parts**: one cell in the rows of their own ingredients, right of the ingredient column. Its `colspan` is the number of columns between the ingredient column and the combining step; its `rowspan` is the number of its ingredient rows. The combining step then extends down to cover those rows.
-- **Unused lower-left cells** are empty and borderless: `<td class="gap" rowspan=".." colspan=".."></td>`, merged into the largest rectangles possible so the staircase is clean. Every grid position is covered by exactly one cell.
-- **Each step cell begins with a short bold action label**: `<span class="lab">Mix</span>`. A cell may hold several `<div class="part">`s when one pan-step has consecutive actions (Brown, then Pour and cool).
-- `colgroup` has one `<col>` per grid column with explicit pixel widths (ingredient ~190-200px, steps ~150-290px, wider for long text). Table `width` = their sum.
+- **Prep steps without ingredients** (greasing a tin, preheating): one full-width row each at the top, `<td class="top" colspan="N"><div>...</div></td>`, N = number of `<col>`s. The inner div is sticky so it stays readable while the table scrolls sideways.
+- **Ingredient column** (`td.ing`, sticky): one row per ingredient, quantity first in `<span class="q">`, metric then imperial in brackets when the source gives both (`200g (1¾ sticks)`).
+- **Step cells** start at the first ingredient row and span down to the last ingredient added so far (`rowspan`). Final steps (bake, cool, slice) span every row.
+- **Separately prepared parts**: one cell on their own ingredient rows, `colspan` = columns between the ingredient column and the step that combines them. That combining step spans down over those rows.
+- **Gaps**: fill unused lower-left positions with borderless `<td class="gap">`, merged into the largest rectangles possible. Every grid position is covered by exactly one cell.
+- **Labels**: each step cell starts with a bold action, `<span class="lab">Mix</span>`. Use several `<div class="part">`s when one step has consecutive actions (Brown, then Pour and cool).
+- **Widths**: one `<col>` per column with pixel widths (ingredients ~190-260px, steps ~130-290px, wider for long text). Table `width` = their sum.
 
-### Worked example (espresso brownies, `examples/espresso-brownies.html`)
-
-Ingredient rows: butter(1), sugar(2), vanilla(3), espresso(4), eggs(5), flour(6), cocoa(7), baking soda(8), salt(9). Six columns: ingredients, Melt, Mix, Mix, Fold in, Bake.
-- Melt: butter only, row 1, no rowspan; rows 2-9 below it are empty.
-- Mix (sugar, vanilla, espresso): rows 1-4, `rowspan="4"`; rows 2-4 of the Melt column are one `gap` cell `rowspan="3"`.
-- Mix (eggs): rows 1-5, `rowspan="5"`; row 5 has a `gap` with `colspan="2"` (the Melt and first Mix columns).
-- Row 6 (flour): a `gap` with `colspan="3"` and `rowspan="4"` covers rows 6-9 of the first three step columns.
-- Fold in (flour, cocoa, baking soda, salt) and Bake: rows 1-9, `rowspan="9"`.
-- Two full-width `top` rows above (prepare the pan, preheat) with `colspan="6"`.
+Example (`examples/espresso-brownies.html`): rows are butter, sugar, vanilla, espresso, eggs, flour, cocoa, baking soda, salt. Melt spans row 1, Mix rows 1-4, Mix rows 1-5, Fold in and Bake rows 1-9. Gaps: `rowspan="3"` under Melt, `colspan="2"` beside eggs, `colspan="3" rowspan="4"` beside the dry ingredients.
 
 ## Content rules
 
-- **Keep everything.** Every instruction, temperature, time, visual cue and "why" tip survives. Do not simplify, merge away or shorten.
-- **Reword in your own words**; do not copy the source's sentences. Numbers and cues ("amber, nutty smell, dark specks") stay exact.
-- **Tips** go in small secondary text under the step they belong to: `<span class="tip">...</span>`.
-- **Above the table**: `h1` title, a `.meta` list (serves, prep, cook, bake; only those the source gives), and the one-line `.hint`. **Below it**: storage in `<p class="store"><b>Storage</b> ...</p>`. Extra material (variations) goes in a `.twist` box after the table. Photos, if supplied, go in a `.photos` grid above the hint.
+- **Let the grid name the ingredients.** A step's rows already show what goes in, so don't list them again in the text. Write only what the grid can't show: technique, time, temperature, visual cues, tips. If the label says it all, the cell is just the label. Name an ingredient only when the step handles it differently from its other rows (one at a time, part now, part later).
+- **Keep every detail.** Every technique, time, temperature, visual cue and "why" tip survives; only ingredient lists the grid already shows are dropped.
+- **Reword**; do not copy the source's sentences. Numbers and cues ("amber, nutty smell, dark specks") stay exact.
+- **Tips** go under their step in `<span class="tip">...</span>`.
+- **Around the table**: above it, the `h1`, a `.meta` list (serves, prep, cook, bake; only those given), an optional `.photos` grid, then the `.hint`. Below it, `<p class="store"><b>Storage</b> ...</p>` and a `.twist` box for variations.
 
 ## Output
 
-Plain markdown tables cannot merge cells, so the grid is always an HTML table.
+The grid needs merged cells, so it is always an HTML table, never markdown.
 
-- Write one self-contained `.html` file from the skeleton below, named after the recipe (`espresso-brownies.html`).
-- If Artifact is available, load its design guidance and publish the page (recipes are kept and shared); otherwise send the file. Keep the template behaviour: phone-readable with 16px side padding and no page-level horizontal scroll (table scrolls inside `.wrap`); light and dark mode via `:root` tokens, the `prefers-color-scheme` block guarded by `:root:not([data-theme="light"])`, and the `[data-theme="dark"]` override; pinned ingredient column and pinned top-row text.
-- Before delivering, run the grid check, then re-read the page against the source once: every ingredient present, every tip present, quantities correct.
-- Reply with one or two sentences on the result and flag assumptions (converted quantity, missing time). Do not recap the steps.
+- Write one self-contained `.html` file named after the recipe (`espresso-brownies.html`). If Artifact is available, load its design guidance and publish the page; otherwise send the file.
+- Keep the skeleton's behaviour: 16px side padding with the table scrolling inside `.wrap`, light/dark tokens (`prefers-color-scheme` block guarded by `:root:not([data-theme="light"])`, plus the `[data-theme="dark"]` override), pinned ingredient column and top-row text.
+- Before delivering, run the grid check and re-read the page against the source: every ingredient, tip and quantity present and correct.
+- Reply in one or two sentences, flagging assumptions (converted quantity, missing time). Do not recap the steps.
 
 ## HTML skeleton (copy it, do not redesign)
 
@@ -120,4 +113,4 @@ td.gap{border:0;background:var(--bg);padding:0}
 
 ## Grid check
 
-Before delivering, verify that every grid position is covered exactly once. Quick method: write the page to a file and run a short Python script (use `python3 -I`) that parses the first `<table>` with `html.parser`, counts `<col>`s as the column count and `<tr>`s as the row count, then places each `<td>` left to right into the first free position, marking `rowspan x colspan` positions as occupied. Report: an "overlap" if a position is claimed twice, a "hole" if any position is never covered (add a `td.gap` or fix a span), and an error if a cell runs past the last row or last column. Also confirm column 1 of every row below the `.top` rows is a `td.ing`, and that the final step cells have a rowspan equal to the number of ingredient rows. Fix all errors, then re-run until clean.
+Parse the first `<table>` with a short `python3 -I` script using `html.parser`: columns = number of `<col>`s, rows = number of `<tr>`s. Place each `<td>` in the first free position of its row and mark its `rowspan x colspan` area. Report overlaps (a position claimed twice), holes (never covered: add a `td.gap` or fix a span) and cells running past the last row or column. Also check that column 1 of every non-`.top` row is a `td.ing` and that final steps span all ingredient rows. Fix and re-run until clean.
