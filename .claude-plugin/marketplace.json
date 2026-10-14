@@ -1,6 +1,9 @@
 {
   "name": "algorithmic-recipe",
-  "owner": { "name": "Cris Barreiro" },
+  "description": "Turn any recipe into a table you can actually cook from.",
+  "owner": {
+    "name": "Cris Barreiro"
+  },
   "plugins": [
     {
       "name": "algorithmic-recipe",
