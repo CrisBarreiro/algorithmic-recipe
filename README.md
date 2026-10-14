@@ -18,46 +18,20 @@ See [`examples/espresso-brownies.html`](examples/espresso-brownies.html) for the
 
 ## Install
 
-The quickest way is to ask your agent:
+Ask your agent:
 
 ```
 Install the algorithmic-recipe skill from https://github.com/CrisBarreiro/algorithmic-recipe, refer to the repo's AGENTS.md for instructions.
 ```
 
-Or do it yourself with one of the routes below.
-
-### Claude Code, as a plugin (recommended)
-
-This repo is its own plugin marketplace. In Claude Code run:
-
-```
-/plugin marketplace add CrisBarreiro/algorithmic-recipe
-/plugin install algorithmic-recipe@algorithmic-recipe
-```
-
-Restart Claude Code (or run `/reload-plugins`) so the skill loads. To get updates later, run `/plugin marketplace update algorithmic-recipe`.
-
-Then type `/algorithmic-recipe`. The namespaced `/algorithmic-recipe:algorithmic-recipe` also works, and is what to use if another skill or command already takes the short name.
-
-### Claude Code, as a personal skill
-
-Copy the skill folder into your skills directory:
+Or in Claude Code:
 
 ```bash
-git clone https://github.com/CrisBarreiro/algorithmic-recipe.git
-cp -r algorithmic-recipe/skills/algorithmic-recipe ~/.claude/skills/
+claude plugin marketplace add CrisBarreiro/algorithmic-recipe
+claude plugin install algorithmic-recipe@algorithmic-recipe
 ```
 
-The slash command is then `/algorithmic-recipe`. To share it with everyone working in one project, copy it into that project's `.claude/skills/` instead.
-
-### Claude.ai and the Claude desktop app
-
-1. Zip the skill folder so `SKILL.md` sits inside a top-level `algorithmic-recipe/` folder:
-   ```bash
-   cd algorithmic-recipe/skills && zip -r algorithmic-recipe.zip algorithmic-recipe
-   ```
-2. In Claude, open **Settings → Capabilities → Skills**, choose **Upload skill** and pick the zip.
-3. Make sure the skill is toggled on.
+See [INSTALL.md](INSTALL.md) for installing without the plugin system, on Claude.ai, and for updating or uninstalling.
 
 ## Usage
 
@@ -74,7 +48,8 @@ Claude also loads the skill on its own when you ask to "rewrite this recipe as a
 ```
 algorithmic-recipe/
 ├── README.md
-├── AGENTS.md                 install steps for agents
+├── INSTALL.md                every install route
+├── AGENTS.md                 install guidance for agents
 ├── .claude-plugin/
 │   ├── plugin.json           plugin manifest
 │   └── marketplace.json      lets /plugin marketplace add point at this repo

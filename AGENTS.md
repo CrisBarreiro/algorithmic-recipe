@@ -4,48 +4,13 @@ Instructions for agents installing or working on [algorithmic-recipe](https://gi
 
 ## Install
 
-When a user asks you to install this skill, read `skills/algorithmic-recipe/SKILL.md` first so you know what you are adding. It is a single Markdown file with no scripts or hooks. Only run the commands below that the chosen route needs.
+When a user asks you to install this skill:
 
-### Claude Code (preferred: plugin)
-
-```bash
-claude plugin marketplace add CrisBarreiro/algorithmic-recipe
-claude plugin install algorithmic-recipe@algorithmic-recipe
-```
-
-This installs for the user across all projects. Add `--scope project` to the install command if the user wants it only for the current project.
-
-Verify with `claude plugin list`. Then tell the user to restart Claude Code (or run `/reload-plugins`) and type `/algorithmic-recipe`.
-
-### Claude Code (without the plugin system)
-
-Copy the skill folder into the skills directory: `~/.claude/skills/` for the user, or `.claude/skills/` in the current project.
-
-```bash
-git clone --depth 1 https://github.com/CrisBarreiro/algorithmic-recipe.git <temp-dir>
-cp -r <temp-dir>/skills/algorithmic-recipe ~/.claude/skills/
-```
-
-If `algorithmic-recipe` already exists there, ask before overwriting it. Remove the temporary clone afterwards. Claude Code picks the skill up without a restart; the command is `/algorithmic-recipe`.
-
-### Other agents that read `SKILL.md`
-
-Copy `skills/algorithmic-recipe/` into that agent's skills directory, the same way as above.
-
-### Claude.ai and the Claude desktop app
-
-You cannot install it there for the user. Give them the zip-and-upload steps from the Install section of `README.md`.
-
-## Update and uninstall
-
-```bash
-claude plugin marketplace update algorithmic-recipe
-claude plugin update algorithmic-recipe@algorithmic-recipe
-claude plugin uninstall algorithmic-recipe
-claude plugin marketplace remove algorithmic-recipe
-```
-
-For a copied folder, update by copying it again and uninstall by deleting the folder.
+1. Read `skills/algorithmic-recipe/SKILL.md` first so you know what you are adding. It is a single Markdown file with no scripts or hooks.
+2. Read `INSTALL.md` and pick the route for the user's runtime. For Claude Code, prefer the plugin route; use `--scope project` only if the user wants it limited to the current project.
+3. Run only the commands that route needs. When copying the folder, clone into a temporary directory, ask before overwriting an existing `algorithmic-recipe` skill folder, and delete the clone afterwards.
+4. Verify (`claude plugin list` for the plugin, or check the copied `SKILL.md` exists), then tell the user how to invoke it: `/algorithmic-recipe`, after a restart or `/reload-plugins` for the plugin route.
+5. On Claude.ai or the desktop app you cannot install it for the user; give them the zip-and-upload steps from `INSTALL.md`.
 
 ## Repository map
 
@@ -56,10 +21,11 @@ For a copied folder, update by copying it again and uninstall by deleting the fo
 | `.claude-plugin/marketplace.json` | Makes the repo its own marketplace. |
 | `examples/espresso-brownies.html` | Reference output. |
 | `docs/espresso-brownies.png` | Screenshot of the example, used in `README.md`. |
-| `README.md` | User-facing overview and install steps. |
+| `README.md` | User-facing overview. |
+| `INSTALL.md` | Every install, update and uninstall route. |
 
 ## Changing the skill
 
 - Edit `SKILL.md` first. If the change affects output, update `examples/espresso-brownies.html` to match and retake the screenshot.
-- Keep the install steps in `README.md` and this file in sync.
+- Install commands live only in `INSTALL.md`; `README.md` repeats just the two plugin commands, so keep those in sync.
 - Run `claude plugin validate .` before committing.
