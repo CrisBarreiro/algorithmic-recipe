@@ -18,6 +18,14 @@ See [`examples/espresso-brownies.html`](examples/espresso-brownies.html) for the
 
 ## Install
 
+The quickest way is to ask your agent:
+
+```
+Install the algorithmic-recipe skill from https://github.com/CrisBarreiro/algorithmic-recipe, refer to the repo's AGENTS.md for instructions.
+```
+
+Or do it yourself with one of the routes below.
+
 ### Claude Code, as a plugin (recommended)
 
 This repo is its own plugin marketplace. In Claude Code run:
@@ -66,6 +74,7 @@ Claude also loads the skill on its own when you ask to "rewrite this recipe as a
 ```
 algorithmic-recipe/
 ├── README.md
+├── AGENTS.md                 install steps for agents
 ├── .claude-plugin/
 │   ├── plugin.json           plugin manifest
 │   └── marketplace.json      lets /plugin marketplace add point at this repo
