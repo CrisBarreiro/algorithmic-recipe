@@ -29,7 +29,7 @@ This repo is its own plugin marketplace. In Claude Code run:
 
 Restart Claude Code (or run `/reload-plugins`) so the skill loads. To get updates later, run `/plugin marketplace update algorithmic-recipe`.
 
-Plugin skills are namespaced, so the slash command is `/algorithmic-recipe:algorithmic-recipe`.
+Then type `/algorithmic-recipe`. The namespaced `/algorithmic-recipe:algorithmic-recipe` also works, and is what to use if another skill or command already takes the short name.
 
 ### Claude Code, as a personal skill
 
@@ -58,8 +58,6 @@ Invoke the skill and give it a recipe (pasted text, a URL or an attachment):
 ```
 /algorithmic-recipe https://example.com/my-favourite-brownies
 ```
-
-(Use `/algorithmic-recipe:algorithmic-recipe` if you installed it as a plugin.)
 
 Claude also loads the skill on its own when you ask to "rewrite this recipe as an algorithmic recipe". The slash command just makes it explicit. The result is a single self-contained HTML page, saved wherever you ask.
 
