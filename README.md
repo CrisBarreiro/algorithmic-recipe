@@ -4,6 +4,8 @@ Turn any recipe into a table you can actually cook from.
 
 Ingredients are listed down the left in the order you add them. Each step sits to the right and stretches over everything already in the bowl, so you always see what is in the mixture and what comes next. Read it left to right like a program.
 
+![Espresso brownies as an algorithmic recipe](docs/espresso-brownies.png)
+
 ## Why it's useful
 
 - **Mise en place in one glance.** The ingredient column is your prep list, already in the order you will need things.
@@ -11,6 +13,8 @@ Ingredients are listed down the left in the order you add them. Each step sits t
 - **Quantities right where you need them.** Each step shows exactly which ingredients go into it, so there is no scrolling back and forth to the ingredient list while your hands are covered in batter.
 - **Nothing lost in translation.** Every temperature, time, visual cue and "why" tip from the original is kept (reworded, not copied).
 - **Works on a phone.** Light and dark mode, and the ingredient column stays pinned while the table scrolls sideways.
+
+See [`examples/espresso-brownies.html`](examples/espresso-brownies.html) for the full page behind the screenshot above.
 
 ## Install
 
@@ -67,7 +71,11 @@ algorithmic-recipe/
 ├── .claude-plugin/
 │   ├── plugin.json           plugin manifest
 │   └── marketplace.json      lets /plugin marketplace add point at this repo
-└── skills/
-    └── algorithmic-recipe/
-        └── SKILL.md          the skill itself (what Claude loads)
+├── skills/
+│   └── algorithmic-recipe/
+│       └── SKILL.md          the skill itself (what Claude loads)
+├── examples/
+│   └── espresso-brownies.html
+└── docs/
+    └── espresso-brownies.png screenshot used in this README
 ```
