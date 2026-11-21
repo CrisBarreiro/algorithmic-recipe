@@ -17,9 +17,11 @@ When a user asks you to install this skill:
 | Path | Purpose |
 | --- | --- |
 | `skills/algorithmic-recipe/SKILL.md` | The skill: workflow, layout and content rules, HTML skeleton, grid check. |
+| `skills/cookbook-recipe/SKILL.md` | Separate cookbook-style layout skill, independent of the one above. |
 | `.claude-plugin/plugin.json` | Plugin manifest. |
 | `.claude-plugin/marketplace.json` | Makes the repo its own marketplace. |
 | `examples/espresso-brownies.html` | Reference output. |
+| `examples/espresso-brownies-cookbook.html` | Reference output for `cookbook-recipe`. |
 | `assets/espresso-brownies.png` | Screenshot of the example, used in `README.md`. |
 | `README.md` | User-facing overview. |
 | `INSTALL.md` | Every install, update and uninstall route. |
