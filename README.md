@@ -2,36 +2,38 @@
 
 Turn any recipe into a page you can actually cook from, and make it gluten-free or dairy-free on the way.
 
+Most recipes list every ingredient at the top and every step underneath, so you keep scrolling back up to find how much of what goes in now. Both layouts here fix that the same way: each step sits right beside the ingredients and quantities it uses, so you can see where you are and what goes in next. They differ in how strict they are about it.
+
 The plugin has four skills that work together:
 
 | Skill | What it does |
 | --- | --- |
-| `/algorithmic-recipe` | A staircase table: ingredients in order of addition, each step spanning everything already in the bowl. |
-| `/cookbook-recipe` | A classic cookbook page: metadata, intro, ingredients with weight, volume and scaling % beside numbered steps. |
+| `/algorithmic-recipe` | The strictest layout: a staircase table where ingredients run in order of addition and each step spans everything already in the bowl. |
+| `/cookbook-recipe` | A friendlier, cookbook-style page with the same structure: ingredients grouped by the step that adds them, with weight, volume and scaling %, beside numbered steps. |
 | `/gluten-free-recipe` | Converts a recipe with gluten using Cris's rules, or swaps an unspecified gluten-free blend for her homemade one. |
 | `/dairy-free-recipe` | Converts a recipe with dairy using Cris's rules. |
 
 All four follow the same [shared rules](skills/_shared/recipe-rules.md): quantities stay in the source's units (only inches become centimetres), every tip and cue is kept, and pages print on landscape A4.
 
+## Why the layouts work
+
+- **Quantities right where you need them.** Each step shows exactly which ingredients go into it, so there is no scrolling back and forth while your hands are covered in batter.
+- **Steps at a glance.** The structure shows where you are in the recipe and what comes next, without rereading paragraphs.
+- **Mise en place in one go.** Ingredients are listed in the order you will need them, so the list doubles as your prep and shopping list.
+- **Nothing lost in translation.** Every temperature, time, visual cue and "why" tip from the original is kept, reworded rather than copied.
+- **Works on a phone and on paper.** Light and dark mode, phone-friendly layouts, and print styles for landscape A4.
+
 ## Algorithmic layout
 
-Ingredients are listed down the left in the order you add them. Each step sits to the right and stretches over everything already in the bowl, so you always see what is in the mixture and what comes next. Read it left to right like a program.
+Ingredients are listed down the left in the order you add them. Each step sits to the right and stretches over everything already in the bowl, so you always see what is in the mixture and what comes next. Read it left to right like a program. On a phone, the ingredient column stays pinned while the table scrolls sideways.
 
 ![Espresso brownies as an algorithmic recipe](assets/espresso-brownies.png)
-
-## Why it's useful
-
-- **Mise en place in one glance.** The ingredient column is your prep list, already in the order you will need things.
-- **Shopping list for free.** Everything with its quantity, in one column.
-- **Quantities right where you need them.** Each step shows exactly which ingredients go into it, so there is no scrolling back and forth to the ingredient list while your hands are covered in batter.
-- **Nothing lost in translation.** Every temperature, time, visual cue and "why" tip from the original is kept (reworded, not copied).
-- **Works on a phone.** Light and dark mode, and the ingredient column stays pinned while the table scrolls sideways.
 
 See the [full espresso brownies page](https://crisbarreiro.com/algorithmic-recipe/examples/espresso-brownies.html) behind the screenshot above (source in [`examples/espresso-brownies.html`](examples/espresso-brownies.html)).
 
 ## Cookbook layout
 
-`/cookbook-recipe` lays a recipe out like a professional cookbook page: a metadata block (yield, time, storage, difficulty, special requirements), a short intro, then ingredients grouped by the step that adds them, with weight, volume and a scaling percentage beside the numbered steps. Variations and make-ahead notes follow. On a phone, each group stacks its ingredients with its steps underneath.
+The same step-by-step structure in a form that reads like a cookbook page. Ingredients are grouped by the step that adds them, and each group sits beside its numbered steps, so finding the quantities for the step you are on is still one glance away. Around it, a metadata block (yield, time, storage, difficulty, special requirements) and a short intro set the scene, and variations and make-ahead notes follow. Weights come first, with volumes alongside and a scaling percentage for each ingredient. On a phone, each group stacks its ingredients with its steps underneath.
 
 <p>
 <img src="assets/espresso-brownies-cookbook.png" alt="Espresso brownies as a cookbook page on a desktop screen" width="68%">
