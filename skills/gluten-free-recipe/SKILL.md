@@ -32,7 +32,7 @@ Decide what kind of bake the recipe is, using the flowchart at the top of `rules
 | Baked cheesecake | Baked cheesecake |
 | Bread and other yeasted doughs | Bread and yeasted doughs (not written yet, see Gap) |
 
-Check the chocolate question first for cakes: a cake with melted chocolate in the batter takes the chocolate rules even if it is also rich in butter. Say which rule set you chose in the reply. If the recipe fits none, or sits between two, ask instead of picking.
+Check the chocolate question first for cakes: a cake with melted chocolate in the batter takes the chocolate rules even if it is also rich in butter. If the recipe fits none, or sits between two, ask instead of picking.
 
 A recipe with several components (a tart: shortcrust plus filling) gets the matching rule set for each component that contains gluten.
 
@@ -65,6 +65,6 @@ Keep the recipe in the language of the source; translate the rule wording into i
 1. **Title**, with "(gluten-free)" or "(sin gluten)" added.
 2. **Ingredients** with converted quantities, weight first, in the order of the original. The blend's three flours take the place of the wheat flour, and new ingredients (xanthan gum, almond flour) go right after them.
 3. **Method** with the original steps and every time, temperature and cue kept, plus any technique note the rules add.
-4. **Changes**: one line per change, original → converted, and the rule behind it ("Butter 200 g → 160 g, cookies that hold their shape, rule 3").
+4. **Changes**: one line per change, original → converted ("Butter 200 g → 160 g"). Do not name the rule set or rule numbers, here or anywhere in the recipe.
 
-Before delivering, recompute every converted quantity from the original and check each rule in the chosen set was applied once. Reply in one or two sentences: the rule set used, any sub-case applied, other gluten ingredients to buy gluten-free, and the gap above when it affects this recipe. If the person wants it dairy-free too, continue with `/dairy-free-recipe`; for a page, `/cookbook-recipe` or `/algorithmic-recipe`.
+Before delivering, recompute every converted quantity from the original and check each rule in the chosen set was applied once. Reply in one or two sentences, without naming rule sets or rules: the main changes, other gluten ingredients to buy gluten-free, and the gap above when it affects this recipe. If the person wants it dairy-free too, continue with `/dairy-free-recipe`; for a page, `/cookbook-recipe` or `/algorithmic-recipe`.

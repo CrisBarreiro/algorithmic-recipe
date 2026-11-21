@@ -28,7 +28,7 @@ It works on any recipe, including one already converted by `/gluten-free-recipe`
 | Baked cheesecake | Baked cheesecake |
 | Bread and other yeasted doughs | Bread and yeasted doughs (not written yet, see Gap) |
 
-Check the chocolate question first for cakes: a cake with melted chocolate in the batter takes the chocolate rules even if it is also rich in butter. Say which rule set you chose in the reply. If the recipe fits none, or sits between two, ask instead of picking. A recipe with several components (a tart: shortcrust plus filling) gets the matching rule set for each component.
+Check the chocolate question first for cakes: a cake with melted chocolate in the batter takes the chocolate rules even if it is also rich in butter. If the recipe fits none, or sits between two, ask instead of picking. A recipe with several components (a tart: shortcrust plus filling) gets the matching rule set for each component.
 
 ## 2. Apply the rules
 
@@ -57,6 +57,6 @@ Keep the recipe in the language of the source; translate the rule wording into i
 1. **Title**, with "(dairy-free)" or "(sin lácteos)" added, after "(gluten-free)" if it is there.
 2. **Ingredients** with converted quantities, weight first, in the order of the original.
 3. **Method** with the original steps and every time, temperature and cue kept, ingredient names updated.
-4. **Changes**: one line per change, original → converted, and the rule behind it ("Butter 160 g → vegan butter 160 g, cookies that hold their shape, rule 2"). If the recipe already has a Changes list from `/gluten-free-recipe`, add to it.
+4. **Changes**: one line per change, original → converted ("Butter 160 g → vegan butter 160 g"). Do not name the rule set or rule numbers, here or anywhere in the recipe. If the recipe already has a Changes list from `/gluten-free-recipe`, add to it.
 
-Before delivering, recompute every converted quantity from the original and check each rule in the chosen set was applied once. Reply in one or two sentences: the rule set used, the alternatives not taken, other dairy ingredients to buy dairy-free, and the gap above when it affects this recipe. For a page, offer `/cookbook-recipe` or `/algorithmic-recipe` with the converted recipe.
+Before delivering, recompute every converted quantity from the original and check each rule in the chosen set was applied once. Reply in one or two sentences, without naming rule sets or rules: the main changes, the alternatives not taken, other dairy ingredients to buy dairy-free, and the gap above when it affects this recipe. For a page, offer `/cookbook-recipe` or `/algorithmic-recipe` with the converted recipe.
