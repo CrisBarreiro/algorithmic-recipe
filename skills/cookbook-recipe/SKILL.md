@@ -18,7 +18,7 @@ If the session is attached to the "Recipes" project, new pages go to `recipes/<s
    - *Storage notes*: how long it keeps and where.
    - *Level of difficulty*: easy, moderate or advanced (your judgement from the method; say so in the reply).
    - *Special requirements*: equipment or techniques beyond a normal kitchen (sous vide, ricer, stand mixer).
-3. **Intro** (`div.intro`, one to three short paragraphs): what makes the dish work, ingredient choices and the key technique. Built from the source's headnote and tips, reworded.
+3. **Intro** (`div.intro`, one `<p>` of two or three short sentences): the one or two things that make the dish work. No background or storytelling; tips that belong to a step go in that step.
 4. **Ingredient table** (see below).
 5. **Variation** (`h2` + `div.note`): related dishes as one-line swaps, with the variation name on its own line. Only when the source gives one.
 6. **To make ahead** (`h2` + `div.note`): where to pause, how to store, and which step number to resume from. Only when the source gives it or the method has an obvious pause point.
@@ -37,6 +37,7 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 
 ## Content rules
 
+- When a blog post and its recipe card disagree (times, quantities), follow the card; use the printable version (`/wprm_print/...` on WordPress recipe sites) when there is one.
 - Keep every time, temperature, visual cue and "why" tip from the source. Tips go in the step as `<span class="tip">...</span>` or in the intro.
 - Reword; do not copy the source's sentences. Numbers and cues stay exact.
 - Steps name the action, not the ingredient list: the row beside them already shows what goes in ("Stir into the potatoes", not "Stir the butter into the potatoes").
@@ -69,8 +70,8 @@ h2{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
 .meta dt{font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
 .meta dd{margin:0;font-style:italic}
 @media (max-width:520px){.meta{grid-template-columns:1fr}.meta dd{margin-bottom:6px}}
-.intro{columns:2 300px;column-gap:28px;margin:0 0 20px}
-.intro p{margin:0;text-indent:1.2em}.intro p:first-child{text-indent:0}
+.intro{max-width:65ch;margin:0 0 20px}
+.intro p{margin:0}
 table{border-collapse:collapse;width:100%;font-size:14px}
 th{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:4px 10px 4px 0;border-bottom:1.5px solid var(--accent)}
 td{padding:4px 10px 4px 0;vertical-align:top}
@@ -105,10 +106,7 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
   <dt>Level of difficulty</dt><dd>moderate</dd>
   <dt>Special requirements</dt><dd>ricer</dd>
 </dl>
-<div class="intro">
-  <p>What makes the dish work and why these ingredients.</p>
-  <p>The key technique, and what to avoid.</p>
-</div>
+<div class="intro"><p>What makes the dish work. The key technique, in a sentence.</p></div>
 <table>
 <thead><tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Scaling</th><th>Procedure</th></tr></thead>
 <!-- one tbody per group; rowspan = rows in the group -->
