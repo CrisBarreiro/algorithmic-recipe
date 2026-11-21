@@ -9,7 +9,7 @@ Cris's own gluten-free conversion rules, translated from her Notion page ("Regla
 ```mermaid
 flowchart LR
     BananaBread[Banana bread] --> RButter(Rules for butter cakes)
-    Bread[Bread and other yeasted doughs] --> RBread(Rules for bread and yeasted doughs)
+    Bread[Bread and other yeasted doughs] --> NoRules(Not adapted: they don't work well with rules)
     Brownies[Brownies] --> RBrownie(Rules for brownies)
     Cakes[Cakes] --> H(Does the batter include melted chocolate?)
     H -- Yes --> RChocolate(Rules for chocolate cakes)
@@ -41,10 +41,6 @@ Cornstarch (starch), brown rice flour (light protein flour) and gluten-free oat 
 1. Use the flour blend and reduce the amount of flour by 10%.
 2. **For cakes and cupcakes:** add ¼ tsp xanthan gum per 120 g of flour blend.
 3. **For muffins:** add ½ tsp xanthan gum per 120 g of flour blend.
-
-## Bread and yeasted doughs
-
-> **Pending.** This rule set has not been added yet. The skill does not convert bread or yeasted doughs until it is.
 
 ## Brownies
 

@@ -79,7 +79,3 @@ Cris's own dairy-free conversion rules, translated from her Notion page ("Reglas
 4. Replace the cream with the same amount of vegan cream.
 5. Add 5 g cornstarch per 225 g of cream cheese.
 6. If the recipe has whipping cream, add 10 g cornstarch per 230 g of cream.
-
-## Bread and yeasted doughs
-
-> **Pending.** This rule set has not been added yet. The skill does not convert bread or yeasted doughs until it is.
