@@ -16,6 +16,10 @@ Ingredients are listed down the left in the order you add them. Each step sits t
 
 See the [full espresso brownies page](https://crisbarreiro.com/algorithmic-recipe/examples/espresso-brownies.html) behind the screenshot above (source in [`examples/espresso-brownies.html`](examples/espresso-brownies.html)).
 
+## Cookbook layout
+
+The repo also has a separate `cookbook-recipe` skill for a classic cookbook page: a metadata block (yield, time, storage, difficulty, special requirements), a short intro, then an ingredient table with weight, volume and scaling % beside numbered steps, plus variation and make-ahead notes. See [`examples/espresso-brownies-cookbook.html`](examples/espresso-brownies-cookbook.html). Invoke it with `/cookbook-recipe`.
+
 ## Install
 
 Ask your agent:
@@ -54,10 +58,13 @@ algorithmic-recipe/
 │   ├── plugin.json           plugin manifest
 │   └── marketplace.json      lets /plugin marketplace add point at this repo
 ├── skills/
-│   └── algorithmic-recipe/
-│       └── SKILL.md          the skill itself (what Claude loads)
+│   ├── algorithmic-recipe/
+│   │   └── SKILL.md          the skill itself (what Claude loads)
+│   └── cookbook-recipe/
+│       └── SKILL.md          separate cookbook-style layout
 ├── examples/
-│   └── espresso-brownies.html
+│   ├── espresso-brownies.html
+│   └── espresso-brownies-cookbook.html
 └── assets/
     └── espresso-brownies.png screenshot used in this README
 ```

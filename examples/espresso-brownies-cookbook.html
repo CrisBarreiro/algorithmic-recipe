@@ -1,0 +1,87 @@
+<title>Espresso brownies</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{--bg:#fbfaf7;--ink:#1f1d1a;--muted:#6b665d;--rule:#d9d5cc;--accent:#b0302a;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1917;--ink:#ece9e2;--muted:#a39d92;--rule:#3d3a35;--accent:#ef7a6c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1917;--ink:#ece9e2;--muted:#a39d92;--rule:#3d3a35;--accent:#ef7a6c;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:15px;line-height:1.45;padding:24px 16px;margin:0}
+main{max-width:960px;margin-inline:auto}
+h1{font-size:clamp(1.4rem,5vw,1.8rem);font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px}
+h2{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:24px 0 4px}
+.src{margin:-8px 0 14px;font-size:13px;color:var(--muted)}
+.src a{color:var(--accent)}
+.meta{display:grid;grid-template-columns:max-content 1fr;gap:2px 24px;margin:0 0 18px}
+.meta dt{font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
+.meta dd{margin:0;font-style:italic}
+@media (max-width:520px){.meta{grid-template-columns:1fr}.meta dd{margin-bottom:6px}}
+.intro{max-width:65ch;margin:0 0 20px}
+.intro p{margin:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:4px 10px 4px 0;border-bottom:1.5px solid var(--accent)}
+td{padding:4px 10px 4px 0;vertical-align:top}
+tbody+tbody tr:first-child td{border-top:1px solid var(--rule)}
+tbody td{padding-top:6px}
+td.ing{width:24%}td.w,td.v,td.s{white-space:nowrap}
+td.s{color:var(--muted)}
+.prep{display:block;font-size:13px;color:var(--muted)}
+td.proc{width:46%}
+td.proc ol{margin:0;padding:0;list-style:none}
+td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
+.n{flex:none;width:1.4em;height:1.4em;margin-top:.05em;border:1px solid currentColor;border-radius:50%;font-size:11px;line-height:1.4em;text-align:center}
+.tip{display:block;font-size:13px;color:var(--muted)}
+.note p{margin:0}
+.base{margin:6px 0 0;font-size:13px;color:var(--muted)}
+/* phone: each group stacks its ingredients, then its steps underneath */
+@media (max-width:640px){
+  thead tr,tbody{display:grid;grid-template-columns:minmax(0,1fr) 4.2em 6.5em 3.4em}
+  tr{display:contents}th:last-child{display:none}
+  td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
+  td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
+}
+</style>
+<main>
+<h1>Espresso brownies</h1>
+<dl class="meta">
+  <dt>Yield</dt><dd>one 8 × 8 in / 20 × 20 cm pan</dd>
+  <dt>Time estimate</dt><dd>30 to 40 minutes baking</dd>
+  <dt>Level of difficulty</dt><dd>easy</dd>
+  <dt>Special requirements</dt><dd>8 × 8 in baking pan</dd>
+</dl>
+<div class="intro"><p>A shot of espresso makes the cocoa taste darker and deeper. Fold in the dry ingredients only until no streaks remain.</p></div>
+<table>
+<thead><tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Scaling</th><th>Procedure</th></tr></thead>
+<tbody>
+<tr><td class="ing">Unsalted butter</td><td class="w">115 g</td><td class="v">½ cup / 1 stick</td><td class="s">144%</td>
+<td class="proc"><ol>
+  <li><span class="n">1</span><span>Grease an 8 × 8 in pan with butter, then dust it with flour.</span></li>
+  <li><span class="n">2</span><span>Preheat the oven to 170 °C / 350 °F.</span></li>
+  <li><span class="n">3</span><span>Melt the butter.</span></li>
+</ol></td></tr>
+</tbody>
+<tbody>
+<tr><td class="ing">Sugar</td><td class="w">200 g</td><td class="v">1 cup</td><td class="s">250%</td>
+<td class="proc" rowspan="3"><ol>
+  <li><span class="n">4</span><span>Stir into the melted butter until combined.</span></li>
+</ol></td></tr>
+<tr><td class="ing">Vanilla extract</td><td class="w">1 g</td><td class="v">¼ tsp</td><td class="s">1.3%</td></tr>
+<tr><td class="ing">Espresso<span class="prep">freshly brewed, or very strong coffee</span></td><td class="w">60 g</td><td class="v">60 mL / 1 shot</td><td class="s">75%</td></tr>
+</tbody>
+<tbody>
+<tr><td class="ing">Eggs</td><td class="w">100 g</td><td class="v">2 large</td><td class="s">125%</td>
+<td class="proc"><ol>
+  <li><span class="n">5</span><span>Mix in.</span></li>
+</ol></td></tr>
+</tbody>
+<tbody>
+<tr><td class="ing">All-purpose flour</td><td class="w">80 g</td><td class="v">½ cup</td><td class="s">100%</td>
+<td class="proc" rowspan="4"><ol>
+  <li><span class="n">6</span><span>Fold in just until combined.</span></li>
+  <li><span class="n">7</span><span>Pour into the pan and bake at 170 °C / 350 °F for 30 to 40 minutes.</span></li>
+</ol></td></tr>
+<tr><td class="ing">Cocoa powder<span class="prep">Hershey's</span></td><td class="w">80 g</td><td class="v">⅓ cup</td><td class="s">100%</td></tr>
+<tr><td class="ing">Baking soda</td><td class="w">1.3 g</td><td class="v">¼ tsp</td><td class="s">1.6%</td></tr>
+<tr><td class="ing">Table salt</td><td class="w">1.5 g</td><td class="v">¼ tsp</td><td class="s">1.9%</td></tr>
+</tbody>
+</table>
+</main>
