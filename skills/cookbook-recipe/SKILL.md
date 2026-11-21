@@ -30,10 +30,10 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 - **Groups.** One `<tbody>` per group of ingredients that enter together. The first row of the group carries `<td class="proc" rowspan="N">`, N = rows in the group, holding the steps that use them.
 - **Steps.** Numbered once across the whole recipe, `<li><span class="n">3</span><span>text</span></li>`. Steps before any ingredient (preheat, set up a water bath) go in the first group. Steps after the last ingredient (bake, cool, serve) go in the last group.
 - **Repeats.** If an ingredient is used again later (water to blanch, then water to cook), give it a new row in the later group.
-- **Weight** in metric (g, kg), the primary quantity. Use "to taste" or "as needed" when the source does.
-- **Volume** in cups and spoons, with mL for liquids, or a count (`about 4 potatoes`, `2 large`). Prefix "about" when it is a conversion.
-- **Scaling** as a percentage of the base ingredient's weight, rounded (1 decimal under 10%). The base is the main ingredient (potatoes in a purée), or flour for baked goods. When flours and starches are blended, the base is their total; say so under the table in `<p class="base">`. Leave blank for "to taste" rows.
-- When the source gives only volumes, convert to grams with standard densities and say so in the reply.
+- **Weight** in metric (g, kg), the primary quantity when the source gives it. Use "to taste" or "as needed" when the source does.
+- **Volume** in cups and spoons, with mL for liquids, or a count (`about 4 potatoes`, `2 large`).
+- **Never convert units.** Give only the quantities the source gives: a row with only a volume or a count leaves Weight blank, and a row with only a weight leaves Volume blank. Do not estimate grams from cups or cups from grams, and keep temperatures in the units the source uses.
+- **Scaling** as a percentage of the base ingredient's weight, rounded (1 decimal under 10%). Leave it blank on rows without a weight; if the base itself has no weight, drop the Scaling column and the base note. The base is the main ingredient (potatoes in a purée), or flour for baked goods. When flours and starches are blended, the base is their total; say so under the table in `<p class="base">`. Leave blank for "to taste" rows.
 
 ## Content rules
 
@@ -48,7 +48,7 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 - One self-contained `.html` file named after the recipe (`potato-puree.html`). If Artifact is available, load its design guidance and publish the page; otherwise send the file.
 - Copy the skeleton's CSS as is. It already handles light/dark and phones (below 640px each group stacks its ingredients with its steps underneath).
 - Before delivering, re-read the page against the source: every ingredient, quantity, step and tip present, step numbers consecutive, each `rowspan` equal to its group's row count, scaling percentages recomputed from the weights.
-- Reply in one or two sentences, flagging assumptions (converted weights, judged difficulty, missing times). Do not recap the steps.
+- Reply in one or two sentences, flagging assumptions (judged difficulty, missing times). Do not recap the steps.
 
 ## HTML skeleton (copy it, do not redesign)
 

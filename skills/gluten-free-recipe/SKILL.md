@@ -41,10 +41,11 @@ A recipe with several components (a tart: shortcrust plus filling) gets the matc
 Apply every rule in the chosen set, in order.
 
 - **Flour.** Replace the wheat flour with the homemade gluten-free flour blend. Some rule sets keep the same amount; others reduce it by 10% (250 g flour → 225 g blend). Round the blend to the nearest 5 g.
-- **The blend** is 50% starch, 25% "light" protein flour and 25% "heavy" protein flour (see `rules.md`). Use Cris's own picks unless the person names others: cornstarch, brown rice flour and gluten-free oat flour. List the three as their own rows, split by weight (225 g blend → 115 g cornstarch, 55 g brown rice flour, 55 g gluten-free oat flour, rounded to 5 g and adjusted so they add up), with the blend total in the prep note. The oat flour must be certified gluten-free.
+- **The blend** is 50% starch, 25% "light" protein flour and 25% "heavy" protein flour (see `rules.md`). Use Cris's own picks unless the person names others: cornstarch, brown rice flour and gluten-free oat flour. List the three as their own rows, split in the source's unit (225 g blend → 115 g cornstarch, 55 g brown rice flour, 55 g gluten-free oat flour, rounded to 5 g and adjusted so they add up), with the blend total in the prep note. The oat flour must be certified gluten-free.
 - **Xanthan gum.** The rules give it per 120 g of blend. Use the blend weight *after* any reduction: blend ÷ 120 × the rule's teaspoons. Round to the nearest ⅛ teaspoon (225 g blend at ¼ tsp per 120 g → 0.47 → ½ tsp).
 - **Per-120 g additions** (almond flour or ground sunflower seeds, baking powder) work the same way, also from the blend weight.
-- **Fat, water, milk and sugar changes** are percentages of the recipe's own quantity (butter reduced 20%: 200 g → 160 g). Apply them to weight and keep the original volume column in step.
+- **Fat, water, milk and sugar changes** are percentages of the recipe's own quantity (butter reduced 20%: 200 g → 160 g). Apply them to each unit the source gives (weight, volume or both).
+- **Never convert units.** Keep only the units the source uses: if it gives flour only in cups, the blend, its split and the reduction are in cups too, and if it gives only grams, there are no cups. Teaspoon amounts from the rules (xanthan gum, baking powder) stay in teaspoons; do not add a weight for them.
 - **Sub-cases.** The indented rules for an egg-free or vegan base apply only when the starting recipe is already egg-free or vegan. The rules do not cover replacing eggs, so do not make a recipe vegan on your own. Where a sub-case says "instead", it replaces the main rule rather than adding to it.
 - **Technique notes** in the rules (butter at room temperature, not melted; add plant milk slowly until the dough forms) go into the matching step of the method.
 
@@ -63,7 +64,7 @@ This is not in the rules yet. Do not fill it in from general knowledge:
 Keep the recipe in the language of the source; translate the rule wording into it. Then:
 
 1. **Title**, with "(gluten-free)" or "(sin gluten)" added.
-2. **Ingredients** with converted quantities, weight first, in the order of the original. The blend's three flours take the place of the wheat flour, and new ingredients (xanthan gum, almond flour) go right after them.
+2. **Ingredients** with converted quantities, in the source's units, in the order of the original. The blend's three flours take the place of the wheat flour, and new ingredients (xanthan gum, almond flour) go right after them.
 3. **Method** with the original steps and every time, temperature and cue kept, plus any technique note the rules add.
 4. **Changes**: one line per change, original → converted ("Butter 200 g → 160 g"). Do not name the rule set or rule numbers, here or anywhere in the recipe.
 

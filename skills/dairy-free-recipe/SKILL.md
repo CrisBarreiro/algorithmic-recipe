@@ -38,6 +38,7 @@ Apply every rule in the chosen set, in order.
 - **Choices.** Where a rule offers two options (vegan butter, or 80% sunflower oil plus 15% plant milk), use the first and mention the other in the reply. For the oil option, both percentages are of the butter's weight (200 g butter → 160 g sunflower oil and 30 g plant milk).
 - **Per-quantity additions** (sugar per 240 g of plant milk, cornstarch per 225 g of cream cheese) scale with the recipe's amount. Round to the nearest gram. For a range (5–10 g), use the middle and give the range in the reply.
 - **Shortcrust starch swap**: 20% of the flour as it stands, so 20% of the gluten-free blend if the recipe has already been converted. Use cornstarch unless the person names another starch.
+- **Never convert units.** Keep only the units the source uses, and apply each change to every unit it gives. Do not add grams to a cup-only recipe or cups to a gram-only one.
 - **Plant milk**: write "plant milk (almond, rice, soy or oat)", never canned coconut milk.
 
 ## 3. Other dairy
@@ -55,7 +56,7 @@ This is not in the rules yet. Do not fill it in from general knowledge:
 Keep the recipe in the language of the source; translate the rule wording into it. Then:
 
 1. **Title**, with "(dairy-free)" or "(sin lácteos)" added, after "(gluten-free)" if it is there.
-2. **Ingredients** with converted quantities, weight first, in the order of the original.
+2. **Ingredients** with converted quantities, in the source's units, in the order of the original.
 3. **Method** with the original steps and every time, temperature and cue kept, ingredient names updated.
 4. **Changes**: one line per change, original → converted ("Butter 160 g → vegan butter 160 g"). Do not name the rule set or rule numbers, here or anywhere in the recipe. If the recipe already has a Changes list from `/gluten-free-recipe`, add to it.
 
