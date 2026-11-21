@@ -19,7 +19,9 @@ When a user asks you to install this skill:
 | `skills/algorithmic-recipe/SKILL.md` | The skill: workflow, layout and content rules, HTML skeleton, grid check. |
 | `skills/cookbook-recipe/SKILL.md` | Separate cookbook-style layout skill, independent of the one above. |
 | `skills/gluten-free-recipe/SKILL.md` | Separate gluten-free conversion skill; its output can feed either layout skill. |
-| `skills/gluten-free-recipe/rules.md` | Cris's conversion rules, verbatim. Edit rules here, not in `SKILL.md`. |
+| `skills/gluten-free-recipe/rules.md` | Cris's gluten-free rules, read by the skill on every run. Edit rules here, not in `SKILL.md`. |
+| `skills/dairy-free-recipe/SKILL.md` | Separate dairy-free conversion skill; runs after `gluten-free-recipe` when both are wanted. |
+| `skills/dairy-free-recipe/rules.md` | Cris's dairy-free rules, read by the skill on every run. Edit rules here, not in `SKILL.md`. |
 | `.claude-plugin/plugin.json` | Plugin manifest. |
 | `.claude-plugin/marketplace.json` | Makes the repo its own marketplace. |
 | `examples/espresso-brownies.html` | Reference output. |

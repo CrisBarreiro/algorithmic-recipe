@@ -1,211 +1,113 @@
-# Reglas
+# Gluten-free rules
 
-Cris's own conversion rules, copied verbatim from her Notion page ("Reglas"). They are the only source of truth for `gluten-free-recipe`: change them here, not in `SKILL.md`.
+Cris's own gluten-free conversion rules, translated from her Notion page ("Reglas"). `SKILL.md` reads this file before every conversion, and it is the only source for ratios: change rules here, not in `SKILL.md`. The dairy-free rules from the same page live in the separate `dairy-free-recipe` skill.
 
-## Qué reglas usar
+"tsp" is a teaspoon. "Flour blend" is the homemade gluten-free flour blend below.
+
+## Which rules to use
 
 ```mermaid
 flowchart LR
-    BananaBread[Banana bread] --> RTartaMantequilla(Reglas para bizcochos con mantequilla)
-    Pan[Pan y otras masas con levadura] --> RPan(Reglas para pan y masas con levadura)
-    Brownies[Brownies] --> RBrownie(Reglas para brownies)
-    Tartas[Bizcochos] --> H(La masa incluye chocolate fundido?)
-    H -- Sí --> RTartaChocolate(Reglas para bizcochos de chocolate)
-    H -- No --> J(Tiene mucha mantequilla o aceite, o es de bizcocho alargado o mismo peso?)
-    J --> RTartaMantequilla2(Reglas para bizcochos con mantequilla)
-    H -- No --> L(Es de tipo swiss roll, o un bizcocho basada en claras montadas?)
-    L --> RSwissRoll(Reglas para swiss rolls y bizcochos esponjosos)
+    BananaBread[Banana bread] --> RButter(Rules for butter cakes)
+    Bread[Bread and other yeasted doughs] --> RBread(Rules for bread and yeasted doughs)
+    Brownies[Brownies] --> RBrownie(Rules for brownies)
+    Cakes[Cakes] --> H(Does the batter include melted chocolate?)
+    H -- Yes --> RChocolate(Rules for chocolate cakes)
+    H -- No --> J(Lots of butter or oil, a loaf cake, or a pound cake?)
+    J --> RButter2(Rules for butter cakes)
+    H -- No --> L(A swiss roll, or a sponge built on whipped egg whites?)
+    L --> RSwissRoll(Rules for swiss rolls and sponge cakes)
 ```
 
-## Mezcla casera de harina sin gluten
+## Homemade gluten-free flour blend
 
-### Ingredientes para 1kg
+### Ingredients for 1 kg
 
-Marcados con ⭐ los que usa The Loopy Whisk
+Marked with ⭐: the ones The Loopy Whisk uses.
 
-- 500g de harina almidonada
-    - Harina de arrurruz , Maizena , Almidón de patata , ⭐ Almidón de tapioca
-- 250g de harina proteica "ligera"
-    - Harina de arroz integral super fina, o ⭐ Harina de mijo
-- 250g de harina proteica "pesada"
-    - Harina de trigo sarraceno , Harina de avena , ⭐ Harina de sorgo , o Harina de teff
+- 500 g starch
+    - Arrowroot, cornstarch, potato starch, ⭐ tapioca starch
+- 250 g "light" protein flour
+    - Superfine brown rice flour, or ⭐ millet flour
+- 250 g "heavy" protein flour
+    - Buckwheat flour, oat flour, ⭐ sorghum flour, or teff flour
 
-### La que uso yo
+### The one I use
 
-Maizena (almidón), harina de arroz integral (proteica ligera) y harina de avena sin gluten (proteica pesada).
+Cornstarch (starch), brown rice flour (light protein flour) and gluten-free oat flour (heavy protein flour).
 
-# Reglas para bizcochos con mantequilla
+## Butter cakes
 
-## Sin gluten
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. **For cakes and cupcakes:** add ¼ tsp xanthan gum per 120 g of flour blend.
+3. **For muffins:** add ½ tsp xanthan gum per 120 g of flour blend.
 
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. **Para bizcochos y cupcakes:** Añade 1/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-3. **Para muffins:** Añade 1/2 cdta de goma xantana por cada 120g de mezcla de harinas
+## Bread and yeasted doughs
 
-## Sin lácteos
+> **Pending.** This rule set has not been added yet. The skill does not convert bread or yeasted doughs until it is.
 
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana . O reemplaza el peso de la mantequilla por un 80% de aceite de girasol y un 15% de bebida vegetal
-3. Reemplaza el yogur o sour cream por el mismo peso o volumen de yogur vegetal sin sabor ni azúcar añadido
-4. Reemplaza la buttermilk for Buttermilk vegana
+## Brownies
 
-# Reglas para pan y masas con levadura
+1. Use the same amount of flour blend.
+2. Add ¼ tsp xanthan gum per 120 g of flour blend.
+    1. If you are starting from an egg-free or vegan base, add ½ tsp xanthan gum per 120 g of flour blend instead, and reduce the fat (butter) by 30%.
 
-> **Pendiente.** This rule set has not been added yet. The skill does not convert bread or yeasted doughs until it is.
+## Chocolate cakes with melted chocolate in the batter
 
-# Reglas para brownies
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. Add ½ tsp xanthan gum per 120 g of flour blend.
+    1. If you are starting from an egg-free or vegan base, add 1 tsp xanthan gum per 120 g of flour blend.
 
-## Sin gluten
+## Swiss rolls and sponge cakes
 
-1. Usa una Mezcla casera de harina sin gluten y usa la misma cantidad
-2. Añade 1/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-    1. Si estás usando una base sin huevo o vegana, añade 1/2 cdta de goma xantana por cada 120g de mezcla de harinas en su lugar, y reduce la cantidad de grasa (mantequilla) en un 30%
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. Add ¾ tsp xanthan gum per 120 g of flour blend.
+    1. If you are starting from a vegan base with no nuts or cocoa powder in the batter, add 20 g almond flour or ground sunflower seeds per 120 g of flour blend.
 
-## Sin lácteos
+## Cookies that hold their shape when baked
 
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana
+1. Use the same amount of flour blend.
+2. Add ¼ tsp xanthan gum per 120 g of flour blend.
+3. Reduce the butter by 20%.
 
-# Reglas para bizcochos de chocolate con chocolate derretido en la masa
+## Cookies that spread when baked
 
-## Sin gluten
+1. Use the same amount of flour blend.
+2. Reduce the butter by 30%. Use it at room temperature, not melted.
+3. Add ¼ tsp xanthan gum per 120 g of flour blend.
 
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. Añade 1/2 de cdta de goma xantana por cada 120g de mezcla de harinas
-    1. Si estás usando una base sin huevo o vegana, añade 1cdta de goma xantana por cada 120g de mezcla de harinas
+## Cake-like cookies
 
-## Sin lácteos
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. Add ¼ tsp xanthan gum per 120 g of flour blend.
+    1. If you are starting from an egg-free or vegan base, add ½ tsp xanthan gum per 120 g of flour blend instead.
 
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana . O reemplaza el peso de la mantequilla por un 80% de aceite de girasol y un 15% de bebida vegetal
-3. Reemplaza el yogur o sour cream por el mismo peso o volumen de yogur vegetal sin sabor ni azúcar añadido
-4. Reemplaza la buttermilk for Buttermilk vegana
+## Shortcrust pastry
 
-# Reglas para swiss rolls y bizcochos esponjosos
+1. Use the same amount of flour blend.
+2. Add ½ tsp xanthan gum per 120 g of flour blend.
+3. Reduce the butter by 20%.
+4. If you are starting from a vegan base, add ¼ tsp baking powder and 20 g almond flour or ground sunflower seeds per 120 g of flour blend. Add the plant milk slowly until the dough comes together (you will need 40% less plant milk than in the version with gluten).
 
-## Sin gluten
+## Puff and flaky pastry
 
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. Añade 3/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-    1. Si estás usando una base vegana sin frutos secos o cacao en polvo en la masa, añade 20g de harina de almendra o semilla de girasol molida por cada 120g de harina sin gluten.
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. Add ½ tsp xanthan gum per 120 g of flour blend.
+3. Increase the water by 20%.
+4. If you are starting from a vegan base, use a 50:50 mix of margarine and vegan butter. Rub the vegan butter into the dry ingredients until you have pea-sized pieces, and add only as much water as the dough needs to come together (you will need 10% less than in the vegan version with gluten).
 
-## Sin lácteos
+## Thick pancakes
 
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana . O reemplaza el peso de la mantequilla por un 80% de aceite de girasol
-3. Reemplaza el yogur o sour cream por el mismo peso o volumen de yogur vegetal sin sabor ni azúcar añadido
-4. Reemplaza la buttermilk for Buttermilk vegana
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. Add ¼ tsp xanthan gum per 120 g of flour blend.
+3. If you are starting from a vegan base, replace 25% of the plant milk with the same weight of vegan condensed milk, and halve the sugar.
 
-# Reglas para cookies que mantienen la forma al hornear
+## Fluffy pancakes
 
-## Sin gluten
+1. Use the flour blend and reduce the amount of flour by 10%.
+2. Add ½ tsp xanthan gum per 120 g of flour blend. If you use a thick liquid such as buttermilk, use only ¼ tsp xanthan gum per 120 g of flour blend.
+3. If you are starting from a vegan base, add 20 g almond flour or ground sunflower seeds per 120 g of flour blend.
 
-1. Usa la misma cantidad Mezcla casera de harina sin gluten
-2. Añade 1/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-3. Reduce la cantidad de mantequilla en un 20%
+## Baked cheesecake
 
-## Sin lácteos
-
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana
-
-# Reglas para cookies que se expanden al hornear
-
-## Sin gluten
-
-1. Usa la misma cantidad de Mezcla casera de harina sin gluten
-2. Reduce la cantidad de mantequilla en un 30%. Úsala a temperatura ambiente, no fundida
-3. Añade 1/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-
-## Sin lácteos
-
-1. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana
-
-# Reglas para adaptar galletas tipo bizcocho
-
-## Sin gluten
-
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. Añade 1/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-    1. Si estás usando una base sin huevo o vegana, añade 1/2 cdta de goma xantana por cada 120g de mezcla de harinas en su lugar
-
-## Sin lácteos
-
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana
-3. Reemplaza el yogur o sour cream por el mismo peso o volumen de yogur vegetal sin sabor ni azúcar añadido
-4. Reemplaza la buttermilk for Buttermilk vegana
-
-# Reglas para adaptar masa quebrada
-
-## Sin gluten
-
-1. Usa la misma cantidad de Mezcla casera de harina sin gluten
-2. Añade 1/2 de cdta de goma xantana por cada 120g de mezcla de harinas
-3. Reduce la cantidad de mantequilla en un 20%
-4. Si partes de una base vegana, añade 1/4 cdta de Royal y 20g de harina de almendra o semillas de girasol molidas por cada 120 de harina sin gluten. Añade la bebida vegetal lentamente hasta que se forme la pasta (necesitarás un 40% menos de bebida vegetal que en la versión con gluten)
-
-## Sin lácteos
-
-1. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana
-2. Cambia un 20% de la harina por el mismo peso de almidón (maizena, almidón de patata, almidón de tapioca, o almidón de arruruz)
-
-# Reglas para masas hojaldradas
-
-## Sin gluten
-
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. Añade 1/2 de cdta de goma xantana por cada 120g de mezcla de harinas
-3. Aumenta la cantidad de agua en un 20%
-4. Si estás empezando con una base vegana, usa una mezcla 50:50 de margarina y Mantequilla vegana. Mezcla la mantequilla vegana con los ingredientes secos hasta que tengas trozos del tamaño de un guisante, y usa el agua que necesites hasta que la masa se forme (Necesitarás un 10% menos que en la versión vegana con gluten)
-
-## Sin lácteos
-
-1. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-2. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana . O reemplaza el peso de la mantequilla por un 80% de aceite de girasol y un 15% de bebida vegetal
-3. Reemplaza el yogur o sour cream por el mismo peso o volumen de yogur vegetal sin sabor ni azúcar añadido
-4. Reemplaza la buttermilk for Buttermilk vegana
-
-# Reglas para tortitas gruesas
-
-## Sin gluten
-
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. Añade 1/4 de cdta de goma xantana por cada 120g de mezcla de harinas
-3. Si partes de una base vegana, sustituye un 25% de la bebida vegetal por el mismo peso de Leche condensada vegana, y reduce la cantidad de azúcar a la mitad.
-
-## Sin lácteos
-
-1. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana . O reemplaza el peso de la mantequilla por un 80% de aceite de girasol y un 15% de bebida vegetal
-2. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-3. Aumenta la cantidad de azúcar en 5-10g por cada 240g de bebida vegetal
-
-# Reglas para tortitas esponjosas
-
-## Sin gluten
-
-1. Usa una Mezcla casera de harina sin gluten y reduce la cantidad de harina en un 10%
-2. Añade 1/2 de cdta de goma xantana por cada 120g de mezcla de harinas. Si usas un líquido espeso, como buttermilk, usa solo 1/4 cdta de goma xantana por cada 120g de mezcla de harinas
-3. Si partes de una base vegana, añade 20g de harina de almendra o semillas de girasol molidas por cada 120g de harina sin gluten
-
-## Sin lácteos
-
-1. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana . O reemplaza el peso de la mantequilla por un 80% de aceite de girasol y un 15% de bebida vegetal
-2. Cambia la leche por el mismo peso o volumen de bebida vegetal (almendra, arroz, soja o avena). No uses leche de coco en lata
-3. Cambia la buttermilk por el mismo peso o volumen de Buttermilk vegana
-4. Aumenta la cantidad de azúcar en 10g por cada 240g de bebida vegetal
-
-# Reglas para tartas de queso al horno
-
-## Sin gluten
-
-1. Usa la misma cantidad de galleta sin gluten para la base
-
-## Sin lácteos
-
-1. Cambia la mantequilla por el mismo peso o volumen de Mantequilla vegana
-2. Cambia el queso crema por el mismo peso o volumen de queso crema vegano con bajo contenido en agua y textura similar al queso crema. Si es demasiado líquido, usa una gasa para queso
-3. Cambia el yogur por el mismo peso de yogur griego vegano
-4. Cambia la nata por la misma cantidad de nata vegana
-5. Añade 5g de maizena por cada 225g de queso crema
-6. Si la receta contiene nata para montar, añade 10g de maizena por cada 230g de nata
+1. Use the same amount of gluten-free biscuits for the base.

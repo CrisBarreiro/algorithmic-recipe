@@ -22,10 +22,13 @@ The repo also has a separate `cookbook-recipe` skill for a classic cookbook page
 
 ## Gluten-free conversion
 
-A third, separate skill, `gluten-free-recipe`, converts a recipe that contains gluten into a gluten-free one using the rules in [`skills/gluten-free-recipe/rules.md`](skills/gluten-free-recipe/rules.md): it picks the rule set for the type of bake (brownies, butter cakes, sponges, cookies, pastry, pancakes, cheesecake), swaps in the homemade gluten-free flour blend, adds xanthan gum, adjusts fat and liquids, and lists every change. Ask for dairy-free too and it applies the dairy-free rules. It returns the converted recipe as text, so you can render it next:
+A third, separate skill, `gluten-free-recipe`, converts a recipe that contains gluten into a gluten-free one using the rules in [`skills/gluten-free-recipe/rules.md`](skills/gluten-free-recipe/rules.md): it picks the rule set for the type of bake (brownies, butter cakes, sponges, cookies, pastry, pancakes, cheesecake), swaps in the homemade gluten-free flour blend, adds xanthan gum, adjusts fat and liquids, and lists every change. It returns the converted recipe as text, so you can render it next.
+
+A fourth skill, `dairy-free-recipe`, does the same for dairy with the rules in [`skills/dairy-free-recipe/rules.md`](skills/dairy-free-recipe/rules.md): plant milk, vegan butter, yogurt, buttermilk, cream and cream cheese swaps, plus the sugar and starch tweaks each bake needs. Chain them in this order:
 
 ```
 /gluten-free-recipe https://example.com/my-favourite-brownies
+/dairy-free-recipe
 /cookbook-recipe
 ```
 
@@ -71,9 +74,12 @@ algorithmic-recipe/
 │   │   └── SKILL.md          the skill itself (what Claude loads)
 │   ├── cookbook-recipe/
 │   │   └── SKILL.md          separate cookbook-style layout
-│   └── gluten-free-recipe/
-│       ├── SKILL.md          gluten-free conversion workflow
-│       └── rules.md          the conversion rules (source of truth)
+│   ├── gluten-free-recipe/
+│   │   ├── SKILL.md          gluten-free conversion workflow
+│   │   └── rules.md          gluten-free rules (source of truth)
+│   └── dairy-free-recipe/
+│       ├── SKILL.md          dairy-free conversion workflow
+│       └── rules.md          dairy-free rules (source of truth)
 ├── examples/
 │   ├── espresso-brownies.html
 │   └── espresso-brownies-cookbook.html
