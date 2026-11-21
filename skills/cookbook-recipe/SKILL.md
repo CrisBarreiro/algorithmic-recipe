@@ -98,7 +98,9 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 @page{size:A4 landscape;margin:0}
 @media print{
   :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--ink:#1f1d1a;--muted:#5f5a52;--rule:#cfcac0;--accent:#b0302a;color-scheme:light}
-  html,body{background:#fff}
+  /* exactly one sheet: no trailing blank pages from the viewer frame */
+  html,body{background:#fff;margin:0;height:210mm;max-height:210mm;overflow:hidden}
+  :root{padding:0}
   body{font-size:10.5px;line-height:1.35;padding:10mm 12mm;box-sizing:border-box}
   main{max-width:none}
   h1{font-size:20px;margin:0 0 6px}
