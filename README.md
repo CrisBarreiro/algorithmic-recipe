@@ -2,14 +2,14 @@
 
 Turn any recipe into a page you can actually cook from, and make it gluten-free or dairy-free on the way.
 
-Most recipes list every ingredient at the top and every step underneath, so you keep scrolling back up to find how much of what goes in now. Both layouts here fix that the same way: each step sits right beside the ingredients and quantities it uses, so you can see where you are and what goes in next. They differ in how strict they are about it.
+Most recipes list every ingredient at the top and every step underneath, so you keep scrolling back up to find how much of what goes in now. Both layouts here fix that the same way: each step sits right beside the ingredients and quantities it uses, so you can see where you are and what goes in next. They just present it differently: one as an algorithmic grid, the other as a more human-friendly cookbook page.
 
 The plugin has four skills that work together:
 
 | Skill | What it does |
 | --- | --- |
-| `/algorithmic-recipe` | The strictest layout: a staircase table where ingredients run in order of addition and each step spans everything already in the bowl. |
-| `/cookbook-recipe` | A friendlier, cookbook-style page with the same structure: ingredients grouped by the step that adds them, with weight, volume and scaling %, beside numbered steps. |
+| `/algorithmic-recipe` | The algorithmic presentation: a staircase table where ingredients run in order of addition and each step spans everything already in the bowl. |
+| `/cookbook-recipe` | The human-friendly presentation: a cookbook-style page with ingredients grouped by the step that adds them, with weight, volume and scaling %, beside numbered steps. |
 | `/gluten-free-recipe` | Converts a recipe with gluten using Cris's rules, or swaps an unspecified gluten-free blend for her homemade one. |
 | `/dairy-free-recipe` | Converts a recipe with dairy using Cris's rules. |
 
