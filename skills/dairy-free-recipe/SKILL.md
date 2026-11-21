@@ -11,24 +11,7 @@ It works on any recipe, including one already converted by `/gluten-free-recipe`
 
 ## 1. Pick the rule set
 
-| Recipe | Rule set |
-| --- | --- |
-| Banana bread | Butter cakes |
-| Cake with melted chocolate in the batter | Chocolate cakes |
-| Cake with lots of butter or oil, loaf cake, pound cake (same weight of each), cupcakes, muffins | Butter cakes |
-| Swiss roll, or a sponge built on whipped egg whites | Swiss rolls and sponge cakes |
-| Brownies | Brownies |
-| Cookies that hold their shape (cut-out, shortbread) | Cookies that hold their shape |
-| Cookies that spread (chocolate chip, drop cookies) | Cookies that spread |
-| Soft, cake-like cookies (madeleines, soft-baked) | Cake-like cookies |
-| Shortcrust (tart and pie dough) | Shortcrust pastry |
-| Puff or rough-puff pastry | Puff and flaky pastry |
-| Thick pancakes | Thick pancakes |
-| Fluffy pancakes | Fluffy pancakes |
-| Baked cheesecake | Baked cheesecake |
-| Bread and other yeasted doughs | Bread and yeasted doughs (not written yet, see Gap) |
-
-Check the chocolate question first for cakes: a cake with melted chocolate in the batter takes the chocolate rules even if it is also rich in butter. If the recipe fits none, or sits between two, ask instead of picking. A recipe with several components (a tart: shortcrust plus filling) gets the matching rule set for each component.
+Use the bake-type table in the shared rules (`../_shared/recipe-rules.md`). Bread and yeasted doughs are not converted.
 
 ## 2. Apply the rules
 
@@ -45,12 +28,6 @@ Apply every rule in the chosen set, in order.
 
 The rules cover milk, butter, yogurt, sour cream, buttermilk, cream and cream cheese. Before delivering, check every other ingredient for dairy: cheese, condensed or evaporated milk, milk powder, ghee, white or milk chocolate, whey, and store-bought mixes. Do not invent swaps for them; list them in the reply as needing a dairy-free version.
 
-## Gap
-
-This is not in the rules yet. Do not fill it in from general knowledge:
-
-- **Bread and yeasted doughs.** That rule set is pending. Do not convert these recipes; say the rules are not written yet.
-
 ## Output
 
 Keep the recipe in the language of the source; translate the rule wording into it. Then:
@@ -60,4 +37,4 @@ Keep the recipe in the language of the source; translate the rule wording into i
 3. **Method** with the original steps and every time, temperature and cue kept, ingredient names updated.
 4. **Changes**: one line per change, original → converted ("Butter 160 g → vegan butter 160 g"). Do not name the rule set or rule numbers, here or anywhere in the recipe. If the recipe already has a Changes list from `/gluten-free-recipe`, add to it.
 
-Before delivering, recompute every converted quantity from the original and check each rule in the chosen set was applied once. Reply in one or two sentences, without naming rule sets or rules: the main changes, the alternatives not taken, other dairy ingredients to buy dairy-free, and the gap above when it affects this recipe. For a page, offer `/cookbook-recipe` or `/algorithmic-recipe` with the converted recipe.
+Before delivering, recompute every converted quantity from the original and check each rule in the chosen set was applied once. Reply in one or two sentences, without naming rule sets or rules: the main changes, the alternatives not taken, other dairy ingredients to buy dairy-free. For a page, offer `/cookbook-recipe` or `/algorithmic-recipe` with the converted recipe.

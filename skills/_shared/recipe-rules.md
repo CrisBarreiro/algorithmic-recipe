@@ -14,6 +14,31 @@ Rules every recipe skill in this repo follows. Each skill's `SKILL.md` links her
 - **Never convert units.** Give only the quantities and temperatures the source gives, in its units (both when it gives both). Do not estimate grams from cups or cups from grams, and do not add a weight to a teaspoon amount. A conversion skill applies each change to every unit the source gives.
 - **Lengths are the one exception.** Write inches as centimetres first with the inches in parentheses (`2.5 cm (1 in)`), and round pan and tray sizes to the nearest standard metric size (`20 cm (8 in) round`, `23 × 33 cm (9 × 13 in)`, `22 × 11 cm (8½ × 4½ in) loaf`).
 
+## Types of bake (conversion skills)
+
+`gluten-free-recipe` and `dairy-free-recipe` pick one rule set from their `rules.md` by the type of bake:
+
+| Recipe | Rule set |
+| --- | --- |
+| Banana bread | Butter cakes |
+| Cake with melted chocolate in the batter | Chocolate cakes |
+| Cake with lots of butter or oil, loaf cake, pound cake (same weight of each), cupcakes, muffins | Butter cakes |
+| Swiss roll, or a sponge built on whipped egg whites | Swiss rolls and sponge cakes |
+| Brownies | Brownies |
+| Cookies that hold their shape (cut-out, shortbread) | Cookies that hold their shape |
+| Cookies that spread (chocolate chip, drop cookies) | Cookies that spread |
+| Soft, cake-like cookies (madeleines, soft-baked) | Cake-like cookies |
+| Shortcrust (tart and pie dough) | Shortcrust pastry |
+| Puff or rough-puff pastry | Puff and flaky pastry |
+| Thick pancakes | Thick pancakes |
+| Fluffy pancakes | Fluffy pancakes |
+| Baked cheesecake | Baked cheesecake |
+
+- Check the chocolate question first for cakes: a cake with melted chocolate in the batter takes the chocolate rules even if it is also rich in butter.
+- If the recipe fits none, or sits between two, ask instead of picking.
+- A recipe with several components (a tart: shortcrust plus filling) gets the matching rule set for each component.
+- **Bread and other yeasted doughs are never converted.** They don't adapt reliably by rules, so there is no rule set for them by design. Say so and leave the recipe as it is.
+
 ## Steps and wording
 
 - **Keep every detail.** Every technique, time, temperature, visual cue and "why" tip from the source survives. Tips go under their step in `<span class="tip">...</span>`.

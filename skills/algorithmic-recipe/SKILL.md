@@ -38,6 +38,7 @@ Example (`examples/espresso-brownies.html`): rows are butter, sugar, vanilla, es
 
 The grid needs merged cells, so it is always an HTML table, never markdown.
 
+- **Printing.** The skeleton prints in light colours on landscape A4 with margins on every sheet, the scroll hint hidden and the whole grid scaled to the sheet's width. Set `--print-zoom` on `.wrap` to `min(1, 1030 ÷ table width)`, rounded down to two decimals (a 1450px table → `0.71`); long recipes run onto more sheets.
 - Keep the skeleton's behaviour: 16px side padding with the table scrolling inside `.wrap`, light/dark tokens (`prefers-color-scheme` block guarded by `:root:not([data-theme="light"])`, plus the `[data-theme="dark"]` override), pinned ingredient column and top-row text.
 - Before delivering, run the grid check as well as the shared re-read.
 
@@ -79,6 +80,24 @@ td.gap{border:0;background:var(--bg);padding:0}
 .store,.twist{margin:16px 0 0;padding:10px 12px;background:var(--accent-bg);font-size:14px}
 .store b,.twist b{font-family:var(--display);font-weight:600}
 .twist p{margin:0}.twist p+p{margin-top:6px}
+/* print: landscape A4, light, whole grid on the sheet (set --print-zoom on .wrap, see SKILL.md) */
+@page{size:A4 landscape;margin:0}
+@media print{
+  :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--card:#fff;--ink:#24221e;--muted:#5f5b53;--rule:#bdbab1;--tint:#efeee9;--accent:#8a5516;--accent-bg:#f3ead9;color-scheme:light}
+  html,body{background:#fff;margin:0;height:auto!important;min-height:0!important;overflow:visible!important}
+  :root{padding:0}
+  body>*:not(main){display:none!important}
+  body{padding:10mm 12mm;box-sizing:border-box;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  main{max-width:none;break-after:avoid}
+  h1{font-size:22px;margin:0 0 6px}
+  .hint,.photos{display:none}
+  .wrap{overflow:visible;zoom:var(--print-zoom,1)}
+  td.ing,td.top>div{position:static;width:auto}
+  td{padding:6px 8px}
+  tr,.store,.twist{break-inside:avoid}
+  .store,.twist{margin-top:8px;padding:6px 10px;font-size:12px}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 <main>
 <h1>Recipe title</h1>
@@ -86,7 +105,8 @@ td.gap{border:0;background:var(--bg);padding:0}
 <p class="src">Original recipe: <a href="https://example.com/recipe">Site name</a></p>
 <ul class="meta"><li><b>8</b>serves</li><li><b>30 min</b>prep</li><li><b>6 min</b>cook</li><li><b>28 min</b>bake</li></ul>
 <p class="hint">Ingredients are listed in the order they go in. Each step covers every ingredient beside it, and the steps run left to right. Scroll sideways on a phone.</p>
-<div class="wrap">
+<!-- --print-zoom = min(1, 1030 / table width), rounded down to 2 decimals: 1450px → 0.71 -->
+<div class="wrap" style="--print-zoom:0.71">
 <table>
 <colgroup><col style="width:190px"><col style="width:280px"><col style="width:190px"><col style="width:170px"></colgroup>
 <tbody>
