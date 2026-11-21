@@ -1,6 +1,6 @@
 ---
 name: "gluten-free-recipe"
-description: "Converts a recipe that contains gluten into a gluten-free one by following Cris's own rules: picks the rule set for the type of bake, swaps in the homemade gluten-free flour blend, adds xanthan gum and adjusts fat and liquids, and lists every change."
+description: "Converts a recipe that contains gluten into a gluten-free one by following Cris's own rules (picks the rule set for the type of bake, swaps in the homemade gluten-free flour blend, adds xanthan gum, adjusts fat and liquids, lists every change). Also use it whenever a recipe calls for a gluten-free flour blend without naming a brand or composition, to swap in the homemade blend."
 ---
 
 # Gluten-free recipe
@@ -10,6 +10,10 @@ Converts a recipe with gluten into a gluten-free one using the rules in `rules.m
 For dairy-free, use the separate `/dairy-free-recipe` skill. When the person wants both, run this one first, then hand the result to `/dairy-free-recipe`, so its swaps apply to the already reduced quantities.
 
 The result is the converted recipe as text. To lay it out as a page, hand it to `/cookbook-recipe` or `/algorithmic-recipe` afterwards; this skill does not render HTML.
+
+## Already gluten-free recipes with a generic blend
+
+When the source is already gluten-free but calls for a gluten-free flour blend without naming a brand or giving its composition, only swap the blend: replace it with the homemade blend in the same amount and the same units, split as in step 2. Skip the rule sets: no flour reduction, and xanthan gum, fat and liquids stay as written. A named shop-bought blend, or one whose flours the source lists, stays as it is. List the swap under Changes.
 
 ## 1. Pick the rule set
 
@@ -41,11 +45,11 @@ A recipe with several components (a tart: shortcrust plus filling) gets the matc
 Apply every rule in the chosen set, in order.
 
 - **Flour.** Replace the wheat flour with the homemade gluten-free flour blend. Some rule sets keep the same amount; others reduce it by 10% (250 g flour → 225 g blend). Round the blend to the nearest 5 g.
-- **The blend** is 50% starch, 25% "light" protein flour and 25% "heavy" protein flour (see `rules.md`). Use Cris's own picks unless the person names others: cornstarch, brown rice flour and gluten-free oat flour. List the three as their own rows, split in the source's unit (225 g blend → 115 g cornstarch, 55 g brown rice flour, 55 g gluten-free oat flour, rounded to 5 g and adjusted so they add up), with the blend total in the prep note. The oat flour must be certified gluten-free.
+- **The blend** is 50% starch, 25% "light" protein flour and 25% "heavy" protein flour (see `rules.md`). Use Cris's own picks unless the person names others: cornstarch, brown rice flour and gluten-free oat flour. List the three as their own rows, split in the source's unit (225 g blend → 112.5 g cornstarch, 56.3 g brown rice flour, 56.2 g gluten-free oat flour, to one decimal and adjusted so they add up), with the blend total in the prep note. The oat flour must be certified gluten-free.
 - **Xanthan gum.** The rules give it per 120 g of blend. Use the blend weight *after* any reduction: blend ÷ 120 × the rule's teaspoons. Round to the nearest ⅛ teaspoon (225 g blend at ¼ tsp per 120 g → 0.47 → ½ tsp).
 - **Per-120 g additions** (almond flour or ground sunflower seeds, baking powder) work the same way, also from the blend weight.
 - **Fat, water, milk and sugar changes** are percentages of the recipe's own quantity (butter reduced 20%: 200 g → 160 g). Apply them to each unit the source gives (weight, volume or both).
-- **Never convert units.** Keep only the units the source uses: if it gives flour only in cups, the blend, its split and the reduction are in cups too, and if it gives only grams, there are no cups. Teaspoon amounts from the rules (xanthan gum, baking powder) stay in teaspoons; do not add a weight for them. Lengths are the one exception: write inches as centimetres first with the inches in parentheses (`2.5 cm (1 in)`), and round pan and tray sizes to the nearest standard metric size (`20 cm (8 in) round`, `23 × 33 cm (9 × 13 in)`, `22 × 11 cm (8½ × 4½ in) loaf`).
+- **Units** follow the shared rules in `../_shared/recipe-rules.md` (or `recipe-rules.md` next to this file in a standalone install): if the source gives flour only in cups, the blend, its split and the reduction are in cups too. Teaspoon amounts from the rules (xanthan gum, baking powder) stay in teaspoons.
 - **Sub-cases.** The indented rules for an egg-free or vegan base apply only when the starting recipe is already egg-free or vegan. The rules do not cover replacing eggs, so do not make a recipe vegan on your own. Where a sub-case says "instead", it replaces the main rule rather than adding to it.
 - **Technique notes** in the rules (butter at room temperature, not melted; add plant milk slowly until the dough forms) go into the matching step of the method.
 

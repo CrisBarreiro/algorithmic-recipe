@@ -70,6 +70,8 @@ algorithmic-recipe/
 │   ├── plugin.json           plugin manifest
 │   └── marketplace.json      lets /plugin marketplace add point at this repo
 ├── skills/
+│   ├── _shared/
+│   │   └── recipe-rules.md   rules every recipe skill shares
 │   ├── algorithmic-recipe/
 │   │   └── SKILL.md          the skill itself (what Claude loads)
 │   ├── cookbook-recipe/
