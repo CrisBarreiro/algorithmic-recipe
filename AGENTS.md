@@ -16,6 +16,7 @@ When a user asks you to install this skill:
 
 | Path | Purpose |
 | --- | --- |
+| `skills/_shared/recipe-rules.md` | Rules all recipe skills share (reading the source, units, wording, output). Edit shared rules here, once. |
 | `skills/algorithmic-recipe/SKILL.md` | The skill: workflow, layout and content rules, HTML skeleton, grid check. |
 | `skills/cookbook-recipe/SKILL.md` | Separate cookbook-style layout skill, independent of the one above. |
 | `skills/gluten-free-recipe/SKILL.md` | Separate gluten-free conversion skill; its output can feed either layout skill. |

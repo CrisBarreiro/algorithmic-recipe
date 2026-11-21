@@ -7,7 +7,7 @@ description: "Rewrites any recipe in a cookbook-style layout (metadata block, sh
 
 A recipe laid out like a professional cookbook page. Ingredients are grouped by the step that adds them, and each group sits next to its numbered steps, so the procedure reads top to bottom alongside the ingredients it uses. Weights come first and every ingredient carries a scaling percentage, so the recipe can be scaled by changing one number.
 
-If the session is attached to the "Recipes" project, new pages go to `recipes/<slug>.html` with project_write. Otherwise `examples/espresso-brownies-cookbook.html` in this repo is the reference.
+Follow the shared rules in `../_shared/recipe-rules.md` (reading the source, ingredients and units, wording, output). This file adds only what is specific to this layout. The reference page is `examples/espresso-brownies-cookbook.html`.
 
 ## Page sections, in order
 
@@ -32,24 +32,18 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 - **Repeats.** If an ingredient is used again later (water to blanch, then water to cook), give it a new row in the later group.
 - **Weight** in metric (g, kg), the primary quantity when the source gives it. Use "to taste" or "as needed" when the source does.
 - **Volume** in cups and spoons, with mL for liquids, or a count (`about 4 potatoes`, `2 large`).
-- **Generic gluten-free flour blend.** If the source calls for a gluten-free flour blend without naming a brand or giving its composition, run `/gluten-free-recipe` on it first; it swaps in Cris's homemade blend. Lay out its result. Otherwise this skill never changes ingredients.
-- **Never convert units.** Give only the quantities the source gives: a row with only a volume or a count leaves Weight blank, and a row with only a weight leaves Volume blank. Do not estimate grams from cups or cups from grams, and keep temperatures in the units the source uses. Lengths are the one exception: write inches as centimetres first with the inches in parentheses (`2.5 cm (1 in)`), and round pan and tray sizes to the nearest standard metric size (`20 cm (8 in) round`, `23 × 33 cm (9 × 13 in)`, `22 × 11 cm (8½ × 4½ in) loaf`).
+- **Units** follow the shared rules: a row with only a volume or a count leaves Weight blank, and a row with only a weight leaves Volume blank.
 - **Scaling** as a percentage of the base ingredient's weight, rounded (1 decimal under 10%). Leave it blank on rows without a weight; if the base itself has no weight, drop the Scaling column and the base note. The base is the main ingredient (potatoes in a purée), or flour for baked goods. When flours and starches are blended, the base is their total; say so under the table in `<p class="base">`. Leave blank for "to taste" rows.
 
 ## Content rules
 
-- When a blog post and its recipe card disagree (times, quantities), follow the card; use the printable version (`/wprm_print/...` on WordPress recipe sites) when there is one.
-- Keep every time, temperature, visual cue and "why" tip from the source. Tips go in the step as `<span class="tip">...</span>` or in the intro.
-- Reword; do not copy the source's sentences. Numbers and cues stay exact.
-- Steps name the action, not the ingredient list: the row beside them already shows what goes in ("Stir into the potatoes", not "Stir the butter into the potatoes").
+- A tip that applies to the whole dish can go in the intro instead of a step.
 - Omit metadata rows and sections the source gives nothing for, except difficulty and special requirements, which you can judge from the method.
 
 ## Output
 
-- One self-contained `.html` file named after the recipe (`potato-puree.html`). If Artifact is available, load its design guidance and publish the page; otherwise send the file.
-- Copy the skeleton's CSS as is. It already handles light/dark, phones (below 640px each group stacks its ingredients with its steps underneath) and printing: the page prints in light colours on one landscape A4 sheet, with the sections after the table side by side. Wrap those sections in `div.notes`, one `<section>` each, as in the skeleton.
-- Before delivering, re-read the page against the source: every ingredient, quantity, step and tip present, step numbers consecutive, each `rowspan` equal to its group's row count, scaling percentages recomputed from the weights.
-- Reply in one or two sentences, flagging assumptions (judged difficulty, missing times). Do not recap the steps.
+- Copy the skeleton's CSS as is. It already handles light/dark, phones (below 640px each group stacks its ingredients with its steps underneath) and printing: the page prints in light colours on landscape A4 with margins on every sheet, running onto more sheets only when the recipe needs them, with the sections after the table side by side. Wrap those sections in `div.notes`, one `<section>` each, as in the skeleton.
+- Before delivering, also check that step numbers are consecutive, each `rowspan` equals its group's row count, and scaling percentages are recomputed from the weights.
 
 ## HTML skeleton (copy it, do not redesign)
 

@@ -7,11 +7,11 @@ description: "Rewrites any recipe as an \"algorithmic\" cumulative table (ingred
 
 A grid that shows, at every step, what is already in the bowl. Ingredients are rows in order of addition; each step is a cell to the right spanning every ingredient used so far, so the steps form a staircase read left to right. When a layout choice is unclear, pick whatever keeps "what is in the bowl now?" answerable at a glance.
 
-If the session is attached to the "Recipes" project, pages in `recipes/` are the style reference (read one with project_read) and new pages go there with project_write at `recipes/<slug>.html`. Otherwise `examples/espresso-brownies.html` in this repo is the reference.
+Follow the shared rules in `../_shared/recipe-rules.md` (reading the source, ingredients and units, wording, output). This file adds only what is specific to this layout. In the "Recipes" project, pages in `recipes/` are the style reference (read one with project_read); otherwise `examples/espresso-brownies.html` is.
 
 ## Workflow
 
-1. **Parse.** Read the whole source (URL or attachment included). Collect title, serves, prep / cook / bake times, ingredients with quantities, every instruction and tip, storage, variations and photos. Omit any time the source does not give. If the source is a URL, keep it for the source link.
+1. **Parse.** Collect title, serves, prep / cook / bake times, ingredients with quantities, every instruction and tip, storage, variations and photos.
 2. **Order the rows.** List each ingredient when it first enters a bowl or pan. Split one into two rows when part is used now and the rest later.
 3. **Plan the columns.** One per step, in order. Steps with no ingredients become full-width rows on top; steps done in a separate bowl get their own cell in the empty lower-left.
 4. **Write the HTML** from the skeleton below, run the grid check and fix what it reports.
@@ -31,22 +31,15 @@ Example (`examples/espresso-brownies.html`): rows are butter, sugar, vanilla, es
 
 ## Content rules
 
-- **Let the grid name the ingredients.** A step's rows already show what goes in, so don't list them again in the text. Write only what the grid can't show: technique, time, temperature, visual cues, tips. If the label says it all, the cell is just the label. Name an ingredient only when the step handles it differently from its other rows (one at a time, part now, part later).
-- **Keep every detail.** Every technique, time, temperature, visual cue and "why" tip survives; only ingredient lists the grid already shows are dropped.
-- **Reword**; do not copy the source's sentences. Numbers and cues ("amber, nutty smell, dark specks") stay exact.
-- **Tips** go under their step in `<span class="tip">...</span>`.
-- **Generic gluten-free flour blend.** If the source calls for a gluten-free flour blend without naming a brand or giving its composition, run `/gluten-free-recipe` on it first; it swaps in Cris's homemade blend. Lay out its result. Otherwise this skill never changes ingredients.
-- **Never convert units.** Give only the quantities and temperatures the source gives (both when it gives both). Do not estimate grams from cups or cups from grams. Lengths are the one exception: write inches as centimetres first with the inches in parentheses (`2.5 cm (1 in)`), and round pan and tray sizes to the nearest standard metric size (`20 cm (8 in) round`, `23 × 33 cm (9 × 13 in)`, `22 × 11 cm (8½ × 4½ in) loaf`).
+- **Labels only when enough.** If a step's label says it all, the cell is just the label.
 - **Around the table**: above it, the `h1`, a `<p class="src">` link to the original when the source is a URL, a `.meta` list (serves, prep, cook, bake; only those given), an optional `.photos` grid, then the `.hint`. Below it, `<p class="store"><b>Storage</b> ...</p>` and a `.twist` box for variations.
 
 ## Output
 
 The grid needs merged cells, so it is always an HTML table, never markdown.
 
-- Write one self-contained `.html` file named after the recipe (`espresso-brownies.html`). If Artifact is available, load its design guidance and publish the page; otherwise send the file.
 - Keep the skeleton's behaviour: 16px side padding with the table scrolling inside `.wrap`, light/dark tokens (`prefers-color-scheme` block guarded by `:root:not([data-theme="light"])`, plus the `[data-theme="dark"]` override), pinned ingredient column and top-row text.
-- Before delivering, run the grid check and re-read the page against the source: every ingredient, tip and quantity present and correct.
-- Reply in one or two sentences, flagging assumptions (missing time). Do not recap the steps.
+- Before delivering, run the grid check as well as the shared re-read.
 
 ## HTML skeleton (copy it, do not redesign)
 

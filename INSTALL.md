@@ -47,8 +47,10 @@ Copy the skill folder into your skills directory:
 
 ```bash
 git clone https://github.com/CrisBarreiro/algorithmic-recipe.git
-cp -r algorithmic-recipe/skills/algorithmic-recipe ~/.claude/skills/
+cp -r algorithmic-recipe/skills/algorithmic-recipe algorithmic-recipe/skills/_shared ~/.claude/skills/
 ```
+
+Copy `skills/_shared` alongside any skill you install: every skill reads its shared rules from `../_shared/recipe-rules.md`.
 
 The slash command is `/algorithmic-recipe`, and Claude Code picks it up without a restart. To share it with everyone working in one project, copy it into that project's `.claude/skills/` instead.
 
