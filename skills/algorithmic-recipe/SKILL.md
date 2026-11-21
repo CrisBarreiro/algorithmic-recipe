@@ -35,6 +35,7 @@ Example (`examples/espresso-brownies.html`): rows are butter, sugar, vanilla, es
 - **Keep every detail.** Every technique, time, temperature, visual cue and "why" tip survives; only ingredient lists the grid already shows are dropped.
 - **Reword**; do not copy the source's sentences. Numbers and cues ("amber, nutty smell, dark specks") stay exact.
 - **Tips** go under their step in `<span class="tip">...</span>`.
+- **Generic gluten-free flour blend.** If the source calls for a gluten-free flour blend without naming a brand or giving its composition, run `/gluten-free-recipe` on it first; it swaps in Cris's homemade blend. Lay out its result. Otherwise this skill never changes ingredients.
 - **Never convert units.** Give only the quantities and temperatures the source gives (both when it gives both). Do not estimate grams from cups or cups from grams. Lengths are the one exception: write inches as centimetres first with the inches in parentheses (`2.5 cm (1 in)`), and round pan and tray sizes to the nearest standard metric size (`20 cm (8 in) round`, `23 × 33 cm (9 × 13 in)`, `22 × 11 cm (8½ × 4½ in) loaf`).
 - **Around the table**: above it, the `h1`, a `<p class="src">` link to the original when the source is a URL, a `.meta` list (serves, prep, cook, bake; only those given), an optional `.photos` grid, then the `.hint`. Below it, `<p class="store"><b>Storage</b> ...</p>` and a `.twist` box for variations.
 

@@ -1,6 +1,6 @@
 ---
 name: "gluten-free-recipe"
-description: "Converts a recipe that contains gluten into a gluten-free one by following Cris's own rules: picks the rule set for the type of bake, swaps in the homemade gluten-free flour blend, adds xanthan gum and adjusts fat and liquids, and lists every change."
+description: "Converts a recipe that contains gluten into a gluten-free one by following Cris's own rules (picks the rule set for the type of bake, swaps in the homemade gluten-free flour blend, adds xanthan gum, adjusts fat and liquids, lists every change). Also use it whenever a recipe calls for a gluten-free flour blend without naming a brand or composition, to swap in the homemade blend."
 ---
 
 # Gluten-free recipe
@@ -10,6 +10,10 @@ Converts a recipe with gluten into a gluten-free one using the rules in `rules.m
 For dairy-free, use the separate `/dairy-free-recipe` skill. When the person wants both, run this one first, then hand the result to `/dairy-free-recipe`, so its swaps apply to the already reduced quantities.
 
 The result is the converted recipe as text. To lay it out as a page, hand it to `/cookbook-recipe` or `/algorithmic-recipe` afterwards; this skill does not render HTML.
+
+## Already gluten-free recipes with a generic blend
+
+When the source is already gluten-free but calls for a gluten-free flour blend without naming a brand or giving its composition, only swap the blend: replace it with the homemade blend in the same amount and the same units, split as in step 2. Skip the rule sets: no flour reduction, and xanthan gum, fat and liquids stay as written. A named shop-bought blend, or one whose flours the source lists, stays as it is. List the swap under Changes.
 
 ## 1. Pick the rule set
 
@@ -42,7 +46,6 @@ Apply every rule in the chosen set, in order.
 
 - **Flour.** Replace the wheat flour with the homemade gluten-free flour blend. Some rule sets keep the same amount; others reduce it by 10% (250 g flour → 225 g blend). Round the blend to the nearest 5 g.
 - **The blend** is 50% starch, 25% "light" protein flour and 25% "heavy" protein flour (see `rules.md`). Use Cris's own picks unless the person names others: cornstarch, brown rice flour and gluten-free oat flour. List the three as their own rows, split in the source's unit (225 g blend → 112.5 g cornstarch, 56.3 g brown rice flour, 56.2 g gluten-free oat flour, to one decimal and adjusted so they add up), with the blend total in the prep note. The oat flour must be certified gluten-free.
-- **Generic gluten-free blends.** If the source already uses a gluten-free flour blend without naming a specific shop-bought brand, replace it with the homemade blend in the same amount, split as above. Keep a named shop-bought blend as it is.
 - **Xanthan gum.** The rules give it per 120 g of blend. Use the blend weight *after* any reduction: blend ÷ 120 × the rule's teaspoons. Round to the nearest ⅛ teaspoon (225 g blend at ¼ tsp per 120 g → 0.47 → ½ tsp).
 - **Per-120 g additions** (almond flour or ground sunflower seeds, baking powder) work the same way, also from the blend weight.
 - **Fat, water, milk and sugar changes** are percentages of the recipe's own quantity (butter reduced 20%: 200 g → 160 g). Apply them to each unit the source gives (weight, volume or both).
