@@ -19,7 +19,20 @@ flowchart LR
 
 ## Mezcla casera de harina sin gluten
 
-> **Pendiente.** The composition of the homemade gluten-free flour blend has not been added yet. Until it is, the skill names the blend ("homemade gluten-free flour blend") and its total weight, but does not break it into flours and starches.
+### Ingredientes para 1kg
+
+Marcados con ⭐ los que usa The Loopy Whisk
+
+- 500g de harina almidonada
+    - Harina de arrurruz , Maizena , Almidón de patata , ⭐ Almidón de tapioca
+- 250g de harina proteica "ligera"
+    - Harina de arroz integral super fina, o ⭐ Harina de mijo
+- 250g de harina proteica "pesada"
+    - Harina de trigo sarraceno , Harina de avena , ⭐ Harina de sorgo , o Harina de teff
+
+### La que uso yo
+
+Maizena (almidón), harina de arroz integral (proteica ligera) y harina de avena sin gluten (proteica pesada).
 
 # Reglas para bizcochos con mantequilla
 
