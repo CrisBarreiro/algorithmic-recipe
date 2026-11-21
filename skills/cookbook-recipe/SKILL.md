@@ -98,10 +98,12 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 @page{size:A4 landscape;margin:0}
 @media print{
   :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--ink:#1f1d1a;--muted:#5f5a52;--rule:#cfcac0;--accent:#b0302a;color-scheme:light}
-  /* exactly one sheet: no trailing blank pages from the viewer frame */
-  html,body{background:#fff;margin:0;height:210mm;max-height:210mm;overflow:hidden}
+  /* margins as padding repeated on every sheet; only the recipe prints, so no trailing blank pages */
+  html,body{background:#fff;margin:0;height:auto!important;min-height:0!important;overflow:visible!important}
   :root{padding:0}
-  body{font-size:10.5px;line-height:1.35;padding:10mm 12mm;box-sizing:border-box}
+  body>*:not(main){display:none!important}
+  body{font-size:10.5px;line-height:1.35;padding:10mm 12mm;box-sizing:border-box;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  main{break-after:avoid}
   main{max-width:none}
   h1{font-size:20px;margin:0 0 6px}
   h2{font-size:10.5px;margin:10px 0 2px}
