@@ -35,6 +35,7 @@ Example (`examples/espresso-brownies.html`): rows are butter, sugar, vanilla, es
 - **Keep every detail.** Every technique, time, temperature, visual cue and "why" tip survives; only ingredient lists the grid already shows are dropped.
 - **Reword**; do not copy the source's sentences. Numbers and cues ("amber, nutty smell, dark specks") stay exact.
 - **Tips** go under their step in `<span class="tip">...</span>`.
+- **Never convert units.** Give only the quantities and temperatures the source gives (both when it gives both). Do not estimate grams from cups or cups from grams. Lengths are the one exception: write inches as centimetres first with the inches in parentheses (`2.5 cm (1 in)`), and round pan and tray sizes to the nearest standard metric size (`20 cm (8 in) round`, `23 × 33 cm (9 × 13 in)`, `22 × 11 cm (8½ × 4½ in) loaf`).
 - **Around the table**: above it, the `h1`, a `<p class="src">` link to the original when the source is a URL, a `.meta` list (serves, prep, cook, bake; only those given), an optional `.photos` grid, then the `.hint`. Below it, `<p class="store"><b>Storage</b> ...</p>` and a `.twist` box for variations.
 
 ## Output
@@ -44,7 +45,7 @@ The grid needs merged cells, so it is always an HTML table, never markdown.
 - Write one self-contained `.html` file named after the recipe (`espresso-brownies.html`). If Artifact is available, load its design guidance and publish the page; otherwise send the file.
 - Keep the skeleton's behaviour: 16px side padding with the table scrolling inside `.wrap`, light/dark tokens (`prefers-color-scheme` block guarded by `:root:not([data-theme="light"])`, plus the `[data-theme="dark"]` override), pinned ingredient column and top-row text.
 - Before delivering, run the grid check and re-read the page against the source: every ingredient, tip and quantity present and correct.
-- Reply in one or two sentences, flagging assumptions (converted quantity, missing time). Do not recap the steps.
+- Reply in one or two sentences, flagging assumptions (missing time). Do not recap the steps.
 
 ## HTML skeleton (copy it, do not redesign)
 
