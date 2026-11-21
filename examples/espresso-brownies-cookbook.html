@@ -31,11 +31,12 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 .n{flex:none;width:1.4em;height:1.4em;margin-top:.05em;border:1px solid currentColor;border-radius:50%;font-size:11px;line-height:1.4em;text-align:center}
 .tip{display:block;font-size:13px;color:var(--muted)}
 .note p{margin:0}
+.base{margin:6px 0 0;font-size:13px;color:var(--muted)}
 /* phone: each group stacks its ingredients, then its steps underneath */
 @media (max-width:640px){
   thead tr,tbody{display:grid;grid-template-columns:minmax(0,1fr) 4.2em 6.5em 3.4em}
   tr{display:contents}th:last-child{display:none}
-  td.ing,td.proc{width:auto}td.v{white-space:normal}
+  td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
 }
 </style>

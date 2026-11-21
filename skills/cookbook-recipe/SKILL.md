@@ -32,7 +32,7 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 - **Repeats.** If an ingredient is used again later (water to blanch, then water to cook), give it a new row in the later group.
 - **Weight** in metric (g, kg), the primary quantity. Use "to taste" or "as needed" when the source does.
 - **Volume** in cups and spoons, with mL for liquids, or a count (`about 4 potatoes`, `2 large`). Prefix "about" when it is a conversion.
-- **Scaling** as a percentage of the base ingredient's weight, rounded (1 decimal under 10%). The base is the main ingredient (potatoes in a purée), or flour for baked goods. Leave blank for "to taste" rows.
+- **Scaling** as a percentage of the base ingredient's weight, rounded (1 decimal under 10%). The base is the main ingredient (potatoes in a purée), or flour for baked goods. When flours and starches are blended, the base is their total; say so under the table in `<p class="base">`. Leave blank for "to taste" rows.
 - When the source gives only volumes, convert to grams with standard densities and say so in the reply.
 
 ## Content rules
@@ -85,11 +85,12 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 .n{flex:none;width:1.4em;height:1.4em;margin-top:.05em;border:1px solid currentColor;border-radius:50%;font-size:11px;line-height:1.4em;text-align:center}
 .tip{display:block;font-size:13px;color:var(--muted)}
 .note p{margin:0}
+.base{margin:6px 0 0;font-size:13px;color:var(--muted)}
 /* phone: each group stacks its ingredients, then its steps underneath */
 @media (max-width:640px){
   thead tr,tbody{display:grid;grid-template-columns:minmax(0,1fr) 4.2em 6.5em 3.4em}
   tr{display:contents}th:last-child{display:none}
-  td.ing,td.proc{width:auto}td.v{white-space:normal}
+  td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
 }
 </style>
@@ -126,6 +127,8 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 </ol></td></tr>
 </tbody>
 </table>
+<!-- only when the base is not a single row at 100% -->
+<p class="base">Scaling is relative to the total flour and starch (635 g = 100%).</p>
 <h2>Variation</h2>
 <div class="note"><p>Variation name</p><p>Substitute X for Y.</p></div>
 <h2>To make ahead</h2>
