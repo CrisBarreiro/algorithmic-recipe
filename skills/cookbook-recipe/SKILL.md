@@ -20,7 +20,7 @@ If the session is attached to the "Recipes" project, new pages go to `recipes/<s
    - *Special requirements*: equipment or techniques beyond a normal kitchen (sous vide, ricer, stand mixer).
 3. **Intro** (`div.intro`, one `<p>` of two or three short sentences): the one or two things that make the dish work. No background or storytelling; tips that belong to a step go in that step.
 4. **Ingredient table** (see below).
-5. **Variation** (`h2` + `div.note`): related dishes as one-line swaps, with the variation name on its own line. Only when the source gives one.
+5. **Variation** (`h2` + `div.note`): related dishes as one-line swaps. Each variation is a `div.var` with its name in `p.vn` (bold) and the swap underneath, so several variations stay visually separate. Only when the source gives one.
 6. **To make ahead** (`h2` + `div.note`): where to pause, how to store, and which step number to resume from. Only when the source gives it or the method has an obvious pause point.
 
 ## Ingredient table
@@ -85,7 +85,7 @@ td.proc ol{margin:0;padding:0;list-style:none}
 td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 .n{flex:none;width:1.4em;height:1.4em;margin-top:.05em;border:1px solid currentColor;border-radius:50%;font-size:11px;line-height:1.4em;text-align:center}
 .tip{display:block;font-size:13px;color:var(--muted)}
-.note p{margin:0}
+.note p{margin:0}.note .var+.var{margin-top:10px}.note .vn{font-weight:600}
 .base{margin:6px 0 0;font-size:13px;color:var(--muted)}
 /* phone: each group stacks its ingredients, then its steps underneath */
 @media (max-width:640px){
@@ -128,7 +128,7 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 <!-- only when the base is not a single row at 100% -->
 <p class="base">Scaling is relative to the total flour and starch (635 g = 100%).</p>
 <h2>Variation</h2>
-<div class="note"><p>Variation name</p><p>Substitute X for Y.</p></div>
+<div class="note"><div class="var"><p class="vn">Variation name</p><p>Substitute X for Y.</p></div></div>
 <h2>To make ahead</h2>
 <div class="note"><p>After step 2, refrigerate until ready to serve. Then continue with step 3.</p></div>
 </main>
