@@ -7,7 +7,7 @@ description: "Rewrites any recipe in a cookbook-style layout (metadata block, sh
 
 A recipe laid out like a professional cookbook page. Ingredients are grouped by the step that adds them, and each group sits next to its numbered steps, so the procedure reads top to bottom alongside the ingredients it uses. Weights come first and every ingredient carries a scaling percentage, so the recipe can be scaled by changing one number.
 
-Follow the shared rules in `../_shared/recipe-rules.md` (reading the source, ingredients and units, wording, output). This file adds only what is specific to this layout. The reference page is `examples/espresso-brownies-cookbook.html`.
+Follow the shared rules in `../_shared/recipe-rules.md` (or `recipe-rules.md` next to this file in a standalone install) (reading the source, ingredients and units, wording, output). This file adds only what is specific to this layout. The reference page is `examples/espresso-brownies-cookbook.html`.
 
 ## Page sections, in order
 

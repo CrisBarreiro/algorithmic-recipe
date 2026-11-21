@@ -64,7 +64,8 @@ Copy `skills/algorithmic-recipe/` into that agent's skills directory, the same w
 
 1. Zip the skill folder so `SKILL.md` sits inside a top-level `algorithmic-recipe/` folder:
    ```bash
-   cd algorithmic-recipe/skills && zip -r algorithmic-recipe.zip algorithmic-recipe
+   cd algorithmic-recipe/skills && cp _shared/recipe-rules.md algorithmic-recipe/ && zip -r algorithmic-recipe.zip algorithmic-recipe
    ```
+   Uploaded skills can't see each other's folders, so the shared rules (`_shared/recipe-rules.md`) are copied into the skill folder first. Do the same for any other skill you upload.
 2. In Claude, open **Settings → Capabilities → Skills**, choose **Upload skill** and pick the zip.
 3. Make sure the skill is toggled on.

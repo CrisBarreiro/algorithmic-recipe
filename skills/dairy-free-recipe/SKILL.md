@@ -38,7 +38,7 @@ Apply every rule in the chosen set, in order.
 - **Choices.** Where a rule offers two options (vegan butter, or 80% sunflower oil plus 15% plant milk), use the first and mention the other in the reply. For the oil option, both percentages are of the butter's weight (200 g butter → 160 g sunflower oil and 30 g plant milk).
 - **Per-quantity additions** (sugar per 240 g of plant milk, cornstarch per 225 g of cream cheese) scale with the recipe's amount. Round to the nearest gram. For a range (5–10 g), use the middle and give the range in the reply.
 - **Shortcrust starch swap**: 20% of the flour as it stands, so 20% of the gluten-free blend if the recipe has already been converted. Use cornstarch unless the person names another starch.
-- **Units** follow the shared rules in `../_shared/recipe-rules.md`; apply each change to every unit the source gives.
+- **Units** follow the shared rules in `../_shared/recipe-rules.md` (or `recipe-rules.md` next to this file in a standalone install); apply each change to every unit the source gives.
 - **Plant milk**: write "plant milk (almond, rice, soy or oat)", never canned coconut milk.
 
 ## 3. Other dairy

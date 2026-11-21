@@ -7,7 +7,7 @@ description: "Rewrites any recipe as an \"algorithmic\" cumulative table (ingred
 
 A grid that shows, at every step, what is already in the bowl. Ingredients are rows in order of addition; each step is a cell to the right spanning every ingredient used so far, so the steps form a staircase read left to right. When a layout choice is unclear, pick whatever keeps "what is in the bowl now?" answerable at a glance.
 
-Follow the shared rules in `../_shared/recipe-rules.md` (reading the source, ingredients and units, wording, output). This file adds only what is specific to this layout. In the "Recipes" project, pages in `recipes/` are the style reference (read one with project_read); otherwise `examples/espresso-brownies.html` is.
+Follow the shared rules in `../_shared/recipe-rules.md` (or `recipe-rules.md` next to this file in a standalone install) (reading the source, ingredients and units, wording, output). This file adds only what is specific to this layout. In the "Recipes" project, pages in `recipes/` are the style reference (read one with project_read); otherwise `examples/espresso-brownies.html` is.
 
 ## Workflow
 
