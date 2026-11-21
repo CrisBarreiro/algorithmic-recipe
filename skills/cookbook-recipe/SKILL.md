@@ -95,10 +95,11 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
 }
 /* print: one landscape A4 sheet, always light */
-@page{size:A4 landscape;margin:10mm 12mm}
+@page{size:A4 landscape;margin:0}
 @media print{
   :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--ink:#1f1d1a;--muted:#5f5a52;--rule:#cfcac0;--accent:#b0302a;color-scheme:light}
-  body{font-size:10.5px;line-height:1.35;padding:0}
+  html,body{background:#fff}
+  body{font-size:10.5px;line-height:1.35;padding:10mm 12mm;box-sizing:border-box}
   main{max-width:none}
   h1{font-size:20px;margin:0 0 6px}
   h2{font-size:10.5px;margin:10px 0 2px}
