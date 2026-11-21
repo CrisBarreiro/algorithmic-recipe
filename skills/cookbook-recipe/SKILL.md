@@ -46,7 +46,7 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 ## Output
 
 - One self-contained `.html` file named after the recipe (`potato-puree.html`). If Artifact is available, load its design guidance and publish the page; otherwise send the file.
-- Copy the skeleton's CSS as is. It already handles light/dark and phones (below 640px each group stacks its ingredients with its steps underneath).
+- Copy the skeleton's CSS as is. It already handles light/dark, phones (below 640px each group stacks its ingredients with its steps underneath) and printing: the page prints in light colours on one landscape A4 sheet, with the sections after the table side by side. Wrap those sections in `div.notes`, one `<section>` each, as in the skeleton.
 - Before delivering, re-read the page against the source: every ingredient, quantity, step and tip present, step numbers consecutive, each `rowspan` equal to its group's row count, scaling percentages recomputed from the weights.
 - Reply in one or two sentences, flagging assumptions (judged difficulty, missing times). Do not recap the steps.
 
@@ -94,6 +94,29 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
   td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
 }
+/* print: one landscape A4 sheet, always light */
+@page{size:A4 landscape;margin:10mm 12mm}
+@media print{
+  :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--ink:#1f1d1a;--muted:#5f5a52;--rule:#cfcac0;--accent:#b0302a;color-scheme:light}
+  body{font-size:10.5px;line-height:1.35;padding:0}
+  main{max-width:none}
+  h1{font-size:20px;margin:0 0 6px}
+  h2{font-size:10.5px;margin:10px 0 2px}
+  .src{margin:-4px 0 6px;font-size:10px}
+  .meta{grid-template-columns:max-content 1fr max-content 1fr;gap:1px 14px;margin:0 0 8px}
+  .meta dt{font-size:9px}
+  .intro{max-width:none;margin:0 0 8px}
+  table{font-size:10px}
+  td.ing{width:20%}td.proc{width:58%}td.w,td.v,td.s{width:auto}
+  .notes{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:24px;break-inside:avoid}
+  .notes h2{margin-top:8px}
+  th{font-size:9px}
+  td{padding:2px 8px 2px 0}tbody td{padding-top:3px}
+  .prep,.tip,.base{font-size:9px}
+  td.proc li+li{margin-top:2px}
+  tr,.note .var{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 <main>
 <h1>Recipe title</h1>
@@ -127,9 +150,12 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 </table>
 <!-- only when the base is not a single row at 100% -->
 <p class="base">Scaling is relative to the total flour and starch (635 g = 100%).</p>
-<h2>Variation</h2>
-<div class="note"><div class="var"><p class="vn">Variation name</p><p>Substitute X for Y.</p></div></div>
-<h2>To make ahead</h2>
-<div class="note"><p>After step 2, refrigerate until ready to serve. Then continue with step 3.</p></div>
+<!-- sections after the table, each in its own <section>; they sit side by side when printed -->
+<div class="notes">
+<section><h2>Variation</h2>
+<div class="note"><div class="var"><p class="vn">Variation name</p><p>Substitute X for Y.</p></div></div></section>
+<section><h2>To make ahead</h2>
+<div class="note"><p>After step 2, refrigerate until ready to serve. Then continue with step 3.</p></div></section>
+</div>
 </main>
 ```
