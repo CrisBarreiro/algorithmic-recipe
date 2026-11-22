@@ -95,7 +95,7 @@ Search uses [Pagefind](https://pagefind.app), with a separate index per language
 
 1. **Cloudflare Pages:** create a project from your repo. Framework preset None, build command `npm run build`, output directory `dist`.
 2. **Cloudflare Access:** in Zero Trust, add a self-hosted application for each address of the site, with a policy that allows only your own emails (one-time PIN login). Add a second application of type Bypass for the path `/brand`, so the login page can show your logo.
-3. **The token check:** under the Pages project's Settings → Variables and secrets, add (Production, Text) `ACCESS_TEAM_DOMAIN`, your team domain (`<team>.cloudflareaccess.com`), and `ACCESS_AUD`, the Application Audience (AUD) tag of each Access application, comma-separated. Then retry the deployment.
+3. **The token check:** under the Pages project's Settings → Variables and secrets, add (Production, Text) `ACCESS_TEAM_DOMAIN`, your team domain (`<team>.cloudflareaccess.com`), and `ACCESS_AUD`, the Application Audience (AUD) tag of each Access application, comma-separated. Then retry the deployment. The default headers allow the site to be embedded only by the public `recipes.crisbarreiro.com` and `recetas.crisbarreiro.com` entry hosts.
 
 `functions/_middleware.js` runs before every file is served and only lets a request through with a valid Access login token: signed by your team, not expired, and issued for one of your applications. Anything else gets a 403 that says which check failed. If either variable is missing it refuses everything. `/brand/` is the only path served without a token. Neither value is a secret: the check relies on Cloudflare's signing key.
 
