@@ -29,7 +29,7 @@ Columns: **Ingredient** (name, prep note in `<span class="prep">` underneath, su
 
 - **Groups.** One `<tbody>` per group of ingredients that enter together. The first row of the group carries `<td class="proc" rowspan="N">`, N = rows in the group, holding the steps that use them.
 - **Steps.** Numbered once across the whole recipe, `<li><span class="n">3</span><span>text</span></li>`. Steps after the last ingredient (bake, cool, serve) go in the last group.
-- **Steps with no ingredient.** Steps that come before any ingredient is used (preheat, line or grease the tin, set up a water bath) never sit beside the first ingredient, which would make them look like they use it. They get their own group at the top, `<tbody class="setup">`, with one row: an empty `<td class="setup" colspan="4"></td>` (no label: the ingredient side stays blank, since these steps use no ingredient) and then the procedure cell. Numbering starts there. A no-ingredient step in the middle of the method (preheat while the dough chills) stays where it happens.
+- **Steps with no ingredient.** Steps that come before any ingredient is used (preheat, line or grease the tin, set up a water bath) never sit beside the first ingredient, which would make them look like they use it. They get their own group at the top, `<tbody class="setup">`, with one row: an empty `<td class="setup" colspan="4"></td>` (no label: the ingredient side stays blank, since these steps use no ingredient; on phones it shows a dash on its own line, so the steps sit under it like any other group) and then the procedure cell. Numbering starts there. A no-ingredient step in the middle of the method (preheat while the dough chills) stays where it happens.
 - **Repeats.** If an ingredient is used again later (water to blanch, then water to cook), give it a new row in the later group.
 - **Weight** in metric (g, kg), the primary quantity when the source gives it. Use "to taste" or "as needed" when the source does.
 - **Volume** in cups and spoons, with mL for liquids, or a count (`about 4 potatoes`, `2 large`).
@@ -90,7 +90,8 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
   tr{display:contents}th:last-child{display:none}
   td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
-  td.setup{display:none}
+  td.setup{display:block;grid-column:1/-1;padding-top:10px;padding-bottom:0;color:var(--muted)}
+  td.setup::before{content:"–"}
 }
 /* print: one landscape A4 sheet, always light */
 @page{size:A4 landscape;margin:0}

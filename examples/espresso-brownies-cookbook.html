@@ -39,7 +39,8 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
   tr{display:contents}th:last-child{display:none}
   td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
-  td.setup{display:none}
+  td.setup{display:block;grid-column:1/-1;padding-top:10px;padding-bottom:0;color:var(--muted)}
+  td.setup::before{content:"–"}
 }
 /* print: one landscape A4 sheet, always light */
 @page{size:A4 landscape;margin:0}
