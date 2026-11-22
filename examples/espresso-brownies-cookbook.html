@@ -26,6 +26,7 @@ td.ing{width:24%}td.w,td.v,td.s{white-space:nowrap}
 td.s{color:var(--muted)}
 .prep{display:block;font-size:13px;color:var(--muted)}
 td.proc{width:46%}
+td.setup{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 td.proc ol{margin:0;padding:0;list-style:none}
 td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 .n{flex:none;width:1.4em;height:1.4em;margin-top:.05em;border:1px solid currentColor;border-radius:50%;font-size:11px;line-height:1.4em;text-align:center}
@@ -38,6 +39,7 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
   tr{display:contents}th:last-child{display:none}
   td.ing,td.proc{width:auto}td.w,td.v{white-space:normal}
   td.proc{grid-column:1/-1;order:1;padding:6px 0 10px}
+  td.setup{grid-column:1/-1;padding-bottom:0}
 }
 /* print: one landscape A4 sheet, always light */
 @page{size:A4 landscape;margin:0}
@@ -79,11 +81,16 @@ td.proc li{display:flex;gap:8px}td.proc li+li{margin-top:4px}
 <div class="intro"><p>A shot of espresso makes the cocoa taste darker and deeper. Fold in the dry ingredients only until no streaks remain.</p></div>
 <table>
 <thead><tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Scaling</th><th>Procedure</th></tr></thead>
-<tbody>
-<tr><td class="ing">Unsalted butter</td><td class="w">115 g</td><td class="v">½ cup / 1 stick</td><td class="s">144%</td>
+<tbody class="setup">
+<tr><td class="setup" colspan="4">Before you start</td>
 <td class="proc"><ol>
   <li><span class="n">1</span><span>Grease a 20 × 20 cm (8 × 8 in) pan with butter, then dust it with flour.</span></li>
   <li><span class="n">2</span><span>Preheat the oven to 170 °C / 350 °F.</span></li>
+</ol></td></tr>
+</tbody>
+<tbody>
+<tr><td class="ing">Unsalted butter</td><td class="w">115 g</td><td class="v">½ cup / 1 stick</td><td class="s">144%</td>
+<td class="proc"><ol>
   <li><span class="n">3</span><span>Melt the butter.</span></li>
 </ol></td></tr>
 </tbody>

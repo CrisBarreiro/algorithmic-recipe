@@ -1,6 +1,6 @@
 {
   "name": "algorithmic-recipe",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Recipe skills: rewrite any recipe as an \"algorithmic\" staircase table or a cookbook-style page (phone-friendly, light/dark, prints on A4), and convert recipes to gluten-free or dairy-free with Cris's own rules.",
   "author": {
     "name": "CrisBarreiro",
