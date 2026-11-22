@@ -1,0 +1,466 @@
+{
+ "en": {
+  "link": "Gluten-free and dairy-free rules",
+  "title": "Gluten-free and dairy-free rules",
+  "intro": "How I adapt a recipe with gluten to be gluten-free, dairy-free or both. Find the type of bake, then apply its rules. \"tsp\" is a teaspoon, and \"flour blend\" is my homemade gluten-free flour blend below.",
+  "gf": "Gluten-free",
+  "df": "Dairy-free",
+  "contents": "Types of bake",
+  "blendTitle": "Homemade gluten-free flour blend",
+  "blendIntro": "For 1 kg. Mix the three parts well; you can swap each one for any of its substitutes, by the same weight.",
+  "blend": [
+   [
+    "500 g starch",
+    "I use cornstarch. Substitutes: arrowroot, potato starch or tapioca starch."
+   ],
+   [
+    "250 g “light” protein flour",
+    "I use superfine brown rice flour. Substitute: millet flour."
+   ],
+   [
+    "250 g “heavy” protein flour",
+    "I use gluten-free oat flour. Substitutes: buckwheat, sorghum or teff flour."
+   ]
+  ],
+  "plantMilk": "“Plant milk” means almond, rice, soy or oat milk. Never canned coconut milk.",
+  "whichTitle": "Which rules to use",
+  "which": [
+   [
+    "Banana bread",
+    "Butter cakes",
+    "butter-cakes"
+   ],
+   [
+    "Brownies",
+    "Brownies",
+    "brownies"
+   ],
+   [
+    "Cakes with melted chocolate in the batter",
+    "Chocolate cakes",
+    "chocolate-cakes"
+   ],
+   [
+    "Cakes with lots of butter or oil, loaf cakes, pound cakes",
+    "Butter cakes",
+    "butter-cakes"
+   ],
+   [
+    "Swiss rolls and sponges built on whipped egg whites",
+    "Swiss rolls and sponge cakes",
+    "swiss-rolls"
+   ],
+   [
+    "Bread and other yeasted doughs",
+    "Not adapted: they don't work well with rules",
+    null
+   ]
+  ],
+  "types": [
+   [
+    "butter-cakes",
+    "Butter cakes",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Cakes and cupcakes: add ¼ tsp xanthan gum per 120 g of flour blend.",
+     "Muffins: add ½ tsp xanthan gum per 120 g of flour blend."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter, or 80% of its weight in sunflower oil plus 15% in plant milk.",
+     "Yogurt or sour cream → the same weight or volume of plain, unsweetened plant yogurt.",
+     "Buttermilk → vegan buttermilk."
+    ]
+   ],
+   [
+    "brownies",
+    "Brownies",
+    [
+     "Use the same amount of flour blend.",
+     "Add ¼ tsp xanthan gum per 120 g of flour blend.",
+     "From an egg-free or vegan base: ½ tsp xanthan gum per 120 g instead, and reduce the butter by 30%."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter."
+    ]
+   ],
+   [
+    "chocolate-cakes",
+    "Chocolate cakes with melted chocolate in the batter",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Add ½ tsp xanthan gum per 120 g of flour blend.",
+     "From an egg-free or vegan base: 1 tsp xanthan gum per 120 g instead."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter, or 80% of its weight in sunflower oil plus 15% in plant milk.",
+     "Yogurt or sour cream → the same weight or volume of plain, unsweetened plant yogurt.",
+     "Buttermilk → vegan buttermilk."
+    ]
+   ],
+   [
+    "swiss-rolls",
+    "Swiss rolls and sponge cakes",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Add ¾ tsp xanthan gum per 120 g of flour blend.",
+     "From a vegan base with no nuts or cocoa in the batter: add 20 g almond flour or ground sunflower seeds per 120 g of flour blend."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter, or 80% of its weight in sunflower oil.",
+     "Yogurt or sour cream → the same weight or volume of plain, unsweetened plant yogurt.",
+     "Buttermilk → vegan buttermilk."
+    ]
+   ],
+   [
+    "cookies-hold",
+    "Cookies that hold their shape",
+    [
+     "Use the same amount of flour blend.",
+     "Add ¼ tsp xanthan gum per 120 g of flour blend.",
+     "Reduce the butter by 20%."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter."
+    ]
+   ],
+   [
+    "cookies-spread",
+    "Cookies that spread",
+    [
+     "Use the same amount of flour blend.",
+     "Reduce the butter by 30%, and use it at room temperature, not melted.",
+     "Add ¼ tsp xanthan gum per 120 g of flour blend."
+    ],
+    [
+     "Butter → the same weight or volume of vegan butter."
+    ]
+   ],
+   [
+    "cake-cookies",
+    "Cake-like cookies",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Add ¼ tsp xanthan gum per 120 g of flour blend.",
+     "From an egg-free or vegan base: ½ tsp xanthan gum per 120 g instead."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter.",
+     "Yogurt or sour cream → the same weight or volume of plain, unsweetened plant yogurt.",
+     "Buttermilk → vegan buttermilk."
+    ]
+   ],
+   [
+    "shortcrust",
+    "Shortcrust pastry",
+    [
+     "Use the same amount of flour blend.",
+     "Add ½ tsp xanthan gum per 120 g of flour blend.",
+     "Reduce the butter by 20%.",
+     "From a vegan base: add ¼ tsp baking powder and 20 g almond flour or ground sunflower seeds per 120 g of flour blend. Add the plant milk slowly until the dough comes together; you'll need 40% less than with gluten."
+    ],
+    [
+     "Butter → the same weight or volume of vegan butter.",
+     "Replace 20% of the flour with the same weight of starch (cornstarch, potato starch, tapioca starch or arrowroot)."
+    ]
+   ],
+   [
+    "puff",
+    "Puff and flaky pastry",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Add ½ tsp xanthan gum per 120 g of flour blend.",
+     "Increase the water by 20%.",
+     "From a vegan base: use half margarine, half vegan butter. Rub the vegan butter into the dry ingredients to pea-sized pieces, and add only as much water as the dough needs; about 10% less than the vegan version with gluten."
+    ],
+    [
+     "Milk → the same weight or volume of plant milk.",
+     "Butter → the same weight or volume of vegan butter, or 80% of its weight in sunflower oil plus 15% in plant milk.",
+     "Yogurt or sour cream → the same weight or volume of plain, unsweetened plant yogurt.",
+     "Buttermilk → vegan buttermilk."
+    ]
+   ],
+   [
+    "thick-pancakes",
+    "Thick pancakes",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Add ¼ tsp xanthan gum per 120 g of flour blend.",
+     "From a vegan base: replace 25% of the plant milk with the same weight of vegan condensed milk, and halve the sugar."
+    ],
+    [
+     "Butter → the same weight or volume of vegan butter, or 80% of its weight in sunflower oil plus 15% in plant milk.",
+     "Milk → the same weight or volume of plant milk.",
+     "Increase the sugar by 5–10 g per 240 g of plant milk."
+    ]
+   ],
+   [
+    "fluffy-pancakes",
+    "Fluffy pancakes",
+    [
+     "Use the flour blend and reduce the amount of flour by 10%.",
+     "Add ½ tsp xanthan gum per 120 g of flour blend; only ¼ tsp with a thick liquid such as buttermilk.",
+     "From a vegan base: add 20 g almond flour or ground sunflower seeds per 120 g of flour blend."
+    ],
+    [
+     "Butter → the same weight or volume of vegan butter, or 80% of its weight in sunflower oil plus 15% in plant milk.",
+     "Milk → the same weight or volume of plant milk.",
+     "Buttermilk → the same weight or volume of vegan buttermilk.",
+     "Increase the sugar by 10 g per 240 g of plant milk."
+    ]
+   ],
+   [
+    "cheesecake",
+    "Baked cheesecake",
+    [
+     "Use the same amount of gluten-free biscuits for the base."
+    ],
+    [
+     "Butter → the same weight or volume of vegan butter.",
+     "Cream cheese → the same weight or volume of a vegan cream cheese that is low in water and firm like cream cheese. If it's too runny, strain it through cheesecloth.",
+     "Yogurt → the same weight of vegan Greek yogurt.",
+     "Cream → the same amount of vegan cream.",
+     "Add 5 g cornstarch per 225 g of cream cheese.",
+     "With whipping cream: add 10 g cornstarch per 230 g of cream."
+    ]
+   ]
+  ]
+ },
+ "es": {
+  "link": "Reglas sin gluten y sin lácteos",
+  "title": "Reglas sin gluten y sin lácteos",
+  "intro": "Cómo adapto una receta con gluten para que sea sin gluten, sin lácteos o ambas cosas. Busca el tipo de receta y aplica sus reglas. \"cdta\" es una cucharadita, y \"mezcla de harina\" es mi mezcla casera de harina sin gluten de abajo.",
+  "gf": "Sin gluten",
+  "df": "Sin lácteos",
+  "contents": "Tipos de receta",
+  "blendTitle": "Mezcla casera de harina sin gluten",
+  "blendIntro": "Para 1 kg. Mezcla bien las tres partes; puedes cambiar cada una por cualquiera de sus sustitutos, con el mismo peso.",
+  "blend": [
+   [
+    "500 g de almidón",
+    "Yo uso maicena. Sustitutos: arrurruz, fécula de patata o almidón de tapioca."
+   ],
+   [
+    "250 g de harina proteica “ligera”",
+    "Yo uso harina de arroz integral extrafina. Sustituto: harina de mijo."
+   ],
+   [
+    "250 g de harina proteica “pesada”",
+    "Yo uso harina de avena sin gluten. Sustitutos: harina de trigo sarraceno, sorgo o teff."
+   ]
+  ],
+  "plantMilk": "“Bebida vegetal” es bebida de almendra, arroz, soja o avena. Nunca leche de coco de lata.",
+  "whichTitle": "Qué reglas usar",
+  "which": [
+   [
+    "Pan de plátano",
+    "Bizcochos de mantequilla",
+    "butter-cakes"
+   ],
+   [
+    "Brownies",
+    "Brownies",
+    "brownies"
+   ],
+   [
+    "Bizcochos con chocolate fundido en la masa",
+    "Bizcochos de chocolate",
+    "chocolate-cakes"
+   ],
+   [
+    "Bizcochos con mucha mantequilla o aceite, bizcochos de molde alargado, cuatro cuartos",
+    "Bizcochos de mantequilla",
+    "butter-cakes"
+   ],
+   [
+    "Brazos de gitano y bizcochos con claras montadas",
+    "Brazos de gitano y bizcochos esponjosos",
+    "swiss-rolls"
+   ],
+   [
+    "Pan y otras masas con levadura",
+    "No se adaptan: no funcionan bien con reglas",
+    null
+   ]
+  ],
+  "types": [
+   [
+    "butter-cakes",
+    "Bizcochos de mantequilla",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Bizcochos y cupcakes: añade ¼ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Magdalenas tipo muffin: añade ½ cdta de goma xantana por cada 120 g de mezcla de harina."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana, o el 80% de su peso en aceite de girasol más un 15% en bebida vegetal.",
+     "Yogur o nata agria → el mismo peso o volumen de yogur vegetal natural sin azúcar.",
+     "Suero de mantequilla → suero de mantequilla vegano."
+    ]
+   ],
+   [
+    "brownies",
+    "Brownies",
+    [
+     "Usa la misma cantidad de mezcla de harina.",
+     "Añade ¼ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Si partes de una receta sin huevo o vegana: ½ cdta de goma xantana por cada 120 g, y reduce la mantequilla un 30%."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana."
+    ]
+   ],
+   [
+    "chocolate-cakes",
+    "Bizcochos de chocolate con chocolate fundido en la masa",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Añade ½ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Si partes de una receta sin huevo o vegana: 1 cdta de goma xantana por cada 120 g."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana, o el 80% de su peso en aceite de girasol más un 15% en bebida vegetal.",
+     "Yogur o nata agria → el mismo peso o volumen de yogur vegetal natural sin azúcar.",
+     "Suero de mantequilla → suero de mantequilla vegano."
+    ]
+   ],
+   [
+    "swiss-rolls",
+    "Brazos de gitano y bizcochos esponjosos",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Añade ¾ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Si partes de una receta vegana sin frutos secos ni cacao en la masa: añade 20 g de harina de almendra o pipas de girasol molidas por cada 120 g de mezcla de harina."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana, o el 80% de su peso en aceite de girasol.",
+     "Yogur o nata agria → el mismo peso o volumen de yogur vegetal natural sin azúcar.",
+     "Suero de mantequilla → suero de mantequilla vegano."
+    ]
+   ],
+   [
+    "cookies-hold",
+    "Galletas que mantienen su forma",
+    [
+     "Usa la misma cantidad de mezcla de harina.",
+     "Añade ¼ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Reduce la mantequilla un 20%."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana."
+    ]
+   ],
+   [
+    "cookies-spread",
+    "Galletas que se extienden",
+    [
+     "Usa la misma cantidad de mezcla de harina.",
+     "Reduce la mantequilla un 30%, y úsala a temperatura ambiente, no fundida.",
+     "Añade ¼ cdta de goma xantana por cada 120 g de mezcla de harina."
+    ],
+    [
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana."
+    ]
+   ],
+   [
+    "cake-cookies",
+    "Galletas tipo bizcocho",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Añade ¼ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Si partes de una receta sin huevo o vegana: ½ cdta de goma xantana por cada 120 g."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana.",
+     "Yogur o nata agria → el mismo peso o volumen de yogur vegetal natural sin azúcar.",
+     "Suero de mantequilla → suero de mantequilla vegano."
+    ]
+   ],
+   [
+    "shortcrust",
+    "Masa quebrada",
+    [
+     "Usa la misma cantidad de mezcla de harina.",
+     "Añade ½ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Reduce la mantequilla un 20%.",
+     "Si partes de una receta vegana: añade ¼ cdta de levadura química y 20 g de harina de almendra o pipas de girasol molidas por cada 120 g de mezcla de harina. Añade la bebida vegetal poco a poco hasta que la masa se una; necesitarás un 40% menos que con gluten."
+    ],
+    [
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana.",
+     "Sustituye el 20% de la harina por el mismo peso de almidón (maicena, fécula de patata, almidón de tapioca o arrurruz)."
+    ]
+   ],
+   [
+    "puff",
+    "Hojaldre y masas laminadas",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Añade ½ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Aumenta el agua un 20%.",
+     "Si partes de una receta vegana: usa mitad margarina, mitad mantequilla vegana. Frota la mantequilla vegana con los secos hasta tener trozos del tamaño de un guisante, y añade solo el agua que necesite la masa; un 10% menos que la versión vegana con gluten."
+    ],
+    [
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana, o el 80% de su peso en aceite de girasol más un 15% en bebida vegetal.",
+     "Yogur o nata agria → el mismo peso o volumen de yogur vegetal natural sin azúcar.",
+     "Suero de mantequilla → suero de mantequilla vegano."
+    ]
+   ],
+   [
+    "thick-pancakes",
+    "Tortitas gruesas",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Añade ¼ cdta de goma xantana por cada 120 g de mezcla de harina.",
+     "Si partes de una receta vegana: sustituye el 25% de la bebida vegetal por el mismo peso de leche condensada vegana, y usa la mitad de azúcar."
+    ],
+    [
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana, o el 80% de su peso en aceite de girasol más un 15% en bebida vegetal.",
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Aumenta el azúcar de 5 a 10 g por cada 240 g de bebida vegetal."
+    ]
+   ],
+   [
+    "fluffy-pancakes",
+    "Tortitas esponjosas",
+    [
+     "Usa la mezcla de harina y reduce la cantidad de harina un 10%.",
+     "Añade ½ cdta de goma xantana por cada 120 g de mezcla de harina; solo ¼ cdta con un líquido espeso como el suero de mantequilla.",
+     "Si partes de una receta vegana: añade 20 g de harina de almendra o pipas de girasol molidas por cada 120 g de mezcla de harina."
+    ],
+    [
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana, o el 80% de su peso en aceite de girasol más un 15% en bebida vegetal.",
+     "Leche → el mismo peso o volumen de bebida vegetal.",
+     "Suero de mantequilla → el mismo peso o volumen de suero de mantequilla vegano.",
+     "Aumenta el azúcar 10 g por cada 240 g de bebida vegetal."
+    ]
+   ],
+   [
+    "cheesecake",
+    "Tarta de queso al horno",
+    [
+     "Usa la misma cantidad de galletas sin gluten para la base."
+    ],
+    [
+     "Mantequilla → el mismo peso o volumen de mantequilla vegana.",
+     "Queso crema → el mismo peso o volumen de un queso crema vegano con poca agua y firme como el queso crema. Si está muy líquido, cuélalo con una gasa.",
+     "Yogur → el mismo peso de yogur griego vegano.",
+     "Nata → la misma cantidad de nata vegana.",
+     "Añade 5 g de maicena por cada 225 g de queso crema.",
+     "Si lleva nata para montar: añade 10 g de maicena por cada 230 g de nata."
+    ]
+   ]
+  ]
+ }
+}

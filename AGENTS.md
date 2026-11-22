@@ -27,6 +27,8 @@ When a user asks you to install these skills:
 | `.claude-plugin/marketplace.json` | Makes the repo its own marketplace. |
 | `examples/espresso-brownies.html` | Reference output. |
 | `examples/espresso-brownies-cookbook.html` | Reference output for `cookbook-recipe`. |
+| `site-template/` | The recipe website template (`build.mjs`, Paper design, defaults, token check). Its README is the user guide. Run `npm run example` after changing it. |
+| `package.json` | Makes the repo an npm dependency for sites using the template (bin `recipe-site`). |
 | `assets/espresso-brownies.png` | Screenshot of the algorithmic example, used in `README.md`. |
 | `assets/espresso-brownies-cookbook*.png` | Desktop and phone screenshots of the cookbook example, used in `README.md`. |
 | `README.md` | User-facing overview. |

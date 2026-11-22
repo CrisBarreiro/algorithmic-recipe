@@ -1,0 +1,52 @@
+{
+  "en": {
+    "name": "English",
+    "siteTitle": "Recipes",
+    "allRecipes": "All recipes",
+    "search": "Search recipes",
+    "all": "All",
+    "onlyIn": "Only in Spanish",
+    "noTranslation": "Not yet in Spanish",
+    "count": "{n} recipes",
+    "tags": {
+      "breakfast": "Breakfast",
+      "baking": "Baking",
+      "gluten-free": "Gluten-free",
+      "dairy-free": "Dairy-free",
+      "vegan": "Vegan",
+      "basics": "Basics"
+    },
+    "layout": "Layout",
+    "cookbook": "Cookbook",
+    "algorithmic": "Algorithmic",
+    "myNotes": "My notes",
+    "skillsTitle": "Make your own recipes",
+    "skillsText": "The recipes here are made with a set of free Claude skills. They turn any recipe gluten-free, dairy-free or both, and lay it out in the same cookbook and algorithmic formats as this site.",
+    "skillsLink": "Get the skills on GitHub"
+  },
+  "es": {
+    "name": "Español",
+    "siteTitle": "Recetas",
+    "allRecipes": "Todas las recetas",
+    "search": "Buscar recetas",
+    "all": "Todas",
+    "onlyIn": "Solo en inglés",
+    "noTranslation": "Aún no está en inglés",
+    "count": "{n} recetas",
+    "tags": {
+      "breakfast": "Desayuno",
+      "baking": "Repostería",
+      "gluten-free": "Sin gluten",
+      "dairy-free": "Sin lácteos",
+      "vegan": "Vegana",
+      "basics": "Básicos"
+    },
+    "layout": "Formato",
+    "cookbook": "Recetario",
+    "algorithmic": "Algorítmica",
+    "myNotes": "Mis notas",
+    "skillsTitle": "Crea tus propias recetas",
+    "skillsText": "Las recetas de esta web se hacen con un conjunto de skills gratuitas para Claude. Convierten cualquier receta en sin gluten, sin lácteos o ambas cosas, y la presentan en los mismos formatos que esta web: recetario y algorítmica.",
+    "skillsLink": "Descarga las skills en GitHub"
+  }
+}
