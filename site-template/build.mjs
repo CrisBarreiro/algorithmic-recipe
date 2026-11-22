@@ -50,6 +50,10 @@ const write = (path, content) => {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 for (const f of ["robots.txt", "_headers"]) copyFileSync(mine(f) || join(ASSETS, f), join(OUT, f));
+// The service worker is same-origin and only becomes useful after a visitor has loaded the
+// protected app once. It lets returning visitors use cached pages when the app hostname is
+// temporarily unreachable.
+copyFileSync(join(ASSETS, "sw.js"), join(OUT, "sw.js"));
 // Public brand assets (icon, login page logo); this path is exempt from Cloudflare Access so the login page
 // can load it. Files in your own brand/ replace the template's ones with the same name.
 mkdirSync(join(OUT, "brand"), { recursive: true });
@@ -115,6 +119,11 @@ const hostScript = `<script>
 })();
 </script>`;
 const langScript = hostScript;
+const serviceWorkerScript = `<script>
+if ("serviceWorker" in navigator) window.addEventListener("load", function () {
+  navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(function () {});
+});
+</script>`;
 
 function switcher(lang, hrefFor) {
   return `<nav class="tabs langs" aria-label="Language">${LANGS.map((l) => {
@@ -193,6 +202,7 @@ ${head.trim()}
 ${FONTS}
 <style>${siteCss}</style>
 ${langScript}
+${serviceWorkerScript}
 </head>
 <body class="paper layout-${layout}">
 ${bar(lang, (l) => (hasLayout(r, l, layout) ? `/${l}/${r.id}/${LAYOUTS[layout]}` : r.versions[l] ? `/${l}/${r.id}/` : null), layoutSwitch(r, lang, layout))}
@@ -252,6 +262,7 @@ ${FONTS}
 <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
 <style>${siteCss}</style>
 ${langScript}
+${serviceWorkerScript}
 </head>
 <body class="paper index">
 <header class="bar"><span class="bar-spacer"></span>${switcher(lang, (l) => `/${l}/`)}</header>
@@ -321,6 +332,7 @@ ${LANGS.filter((l) => RULES[l]).map((l) => `<link rel="alternate" hreflang="${l}
 ${FONTS}
 <style>${siteCss}</style>
 ${langScript}
+${serviceWorkerScript}
 </head>
 <body class="paper index">
 ${bar(lang, (l) => (RULES[l] ? `/${l}/rules/` : null))}
@@ -340,6 +352,7 @@ write(join(OUT, "index.html"), `<!doctype html>
 ${ROBOTS_META}
 ${ICONS}
 <title>${LANGS.map((l) => esc(i18n[l].siteTitle)).join(" · ")}</title>
+${serviceWorkerScript}
 <script>
 (function () {
   var langs = ${JSON.stringify(LANGS)}, hosts = ${JSON.stringify(HOSTS)}, pick;
