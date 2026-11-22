@@ -54,6 +54,12 @@ Source in [`examples/espresso-brownies-cookbook.html`](examples/espresso-brownie
 /cookbook-recipe
 ```
 
+## Your own recipe site
+
+`site-template/` turns the pages these skills write into a private recipe website: an index with search and tags, both layouts for each recipe, English and Spanish, and a page of the gluten-free and dairy-free rules. It's built for Cloudflare Pages behind a Cloudflare Access login. Your own repo only holds your recipes and pulls the template in as an npm dependency. See [site-template/README.md](site-template/README.md).
+
+<img src="site-template/design/screenshots/recipe-light.png" alt="A recipe on the site template" width="68%">
+
 ## Install
 
 Ask your agent:
@@ -107,6 +113,13 @@ algorithmic-recipe/
 ├── examples/
 │   ├── espresso-brownies.html
 │   └── espresso-brownies-cookbook.html
+├── site-template/            a private recipe website for the skills' pages (see its README)
+│   ├── build.mjs             the build (npm bin: recipe-site)
+│   ├── design/               Paper, the site's design system
+│   ├── assets/               default labels, rules page, CSS, icons
+│   ├── functions/            Cloudflare Access token check
+│   └── example/              a one-recipe site to try it on
+├── package.json              lets a site depend on this repo for the template
 └── assets/                   screenshots used in this README
     ├── espresso-brownies.png
     ├── espresso-brownies-cookbook.png

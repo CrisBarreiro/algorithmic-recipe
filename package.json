@@ -1,0 +1,19 @@
+{
+  "name": "algorithmic-recipe",
+  "version": "0.8.0",
+  "private": true,
+  "description": "Site template for a private recipe site built from the algorithmic-recipe skills' pages.",
+  "type": "module",
+  "bin": {
+    "recipe-site": "site-template/build.mjs"
+  },
+  "files": [
+    "site-template"
+  ],
+  "scripts": {
+    "example": "cd site-template/example && node ../build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
