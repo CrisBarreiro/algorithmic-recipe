@@ -54,8 +54,11 @@ Every accent passes 4.5:1 contrast on the page in both themes.
 
 ## Icon
 
-A cinnamon roll on caramel, in `assets/brand/`: `icon.svg` (the favicon, two turns so it reads at 16px),
-`icon-32.png` and `apple-touch-icon.png`, and `logo.png` (512px, three turns, for the login page) with its source `logo.svg`.
+A cinnamon roll seen from above: the caramel swirl (`--accent`, `#9A5B22`) on a golden baked square
+(`#E2AE6E`). The swirl is traced from a photo of one of Cris's own rolls, smoothed, thickened and filling most of the square, so its
+curves and two turns are a real roll's. One drawing at every size, in `assets/brand/`: `logo.svg` and `logo.png`
+(512px, the login page), `icon.svg` and `icon-32.png` (the favicon), and `apple-touch-icon.png` (180px, square
+corners, since phones round them).
 
 ![The icon at 180, 64, 32 and 16px](screenshots/icon.png)
 
