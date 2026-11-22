@@ -99,6 +99,18 @@ Search uses [Pagefind](https://pagefind.app), with a separate index per language
 
 `functions/_middleware.js` runs before every file is served and only lets a request through with a valid Access login token: signed by your team, not expired, and issued for one of your applications. Anything else gets a 403 that says which check failed. If either variable is missing it refuses everything. `/brand/` is the only path served without a token. Neither value is a secret: the check relies on Cloudflare's signing key.
 
+## When the site can't be reached
+
+Some networks block Cloudflare for hours at a time: Spanish internet providers do during LaLiga football matches. The browser then just times out. The site installs a small service worker (`/sw.js`) that softens this for anyone who has opened the site before:
+
+- Pages still come from the network first. Each recipe page that loads is kept in the browser.
+- If the network fails or takes more than 6 seconds, it shows the kept copy of that page. If there is none, it shows a page that explains the block, with a "Try again" button and a list of the recipes kept on that device.
+- Redirects to the Cloudflare Access login are passed straight through and never kept.
+
+It can't help a browser that has never opened the site. For that, the addresses people type need to be served from somewhere outside Cloudflare. The texts are `offlineTitle`, `offlineText`, `offlineRetry`, `offlineSaved` and `offlineSavedNote` in `assets/i18n.json`, and `site.config.json` can override them like any other label.
+
+Kept pages stay in that browser until its site data is cleared, so on a shared device someone could read them during a block without logging in.
+
 ## What's in here
 
 | Path | What it is |

@@ -22,7 +22,12 @@
     "myNotes": "My notes",
     "skillsTitle": "Make your own recipes",
     "skillsText": "The recipes here are made with a set of free Claude skills. They turn any recipe gluten-free, dairy-free or both, and lay it out in the same cookbook and algorithmic formats as this site.",
-    "skillsLink": "Get the skills on GitHub"
+    "skillsLink": "Get the skills on GitHub",
+    "offlineTitle": "Can't reach the recipes right now",
+    "offlineText": "The site runs on Cloudflare, which some Spanish internet providers block during LaLiga football matches. Try again in a while, or use a VPN.",
+    "offlineRetry": "Try again",
+    "offlineSaved": "Saved on this device",
+    "offlineSavedNote": "Recipes you've opened before, available while the site is out of reach."
   },
   "es": {
     "name": "Español",
@@ -47,6 +52,11 @@
     "myNotes": "Mis notas",
     "skillsTitle": "Crea tus propias recetas",
     "skillsText": "Las recetas de esta web se hacen con un conjunto de skills gratuitas para Claude. Convierten cualquier receta en sin gluten, sin lácteos o ambas cosas, y la presentan en los mismos formatos que esta web: recetario y algorítmica.",
-    "skillsLink": "Descarga las skills en GitHub"
+    "skillsLink": "Descarga las skills en GitHub",
+    "offlineTitle": "Ahora mismo no se pueden abrir las recetas",
+    "offlineText": "La web funciona con Cloudflare, y algunos proveedores de internet en España lo bloquean durante los partidos de LaLiga. Vuelve a intentarlo dentro de un rato o usa una VPN.",
+    "offlineRetry": "Volver a intentarlo",
+    "offlineSaved": "Guardadas en este dispositivo",
+    "offlineSavedNote": "Recetas que ya has abierto, disponibles mientras no se pueda acceder a la web."
   }
 }

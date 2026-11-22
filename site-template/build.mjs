@@ -103,6 +103,7 @@ const hostScript = `<script>
 (function () {
   var hosts = ${JSON.stringify(HOSTS)}, here = location.hostname, lang = document.documentElement.lang, on = false;
   for (var l in hosts) if (hosts[l] === here) on = true;
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});
   try { localStorage.setItem("lang", lang); } catch (e) {}
   if (!on) return;
   if (hosts[lang] && hosts[lang] !== here) { location.replace("https://" + hosts[lang] + location.pathname + location.search); return; }
@@ -343,6 +344,7 @@ ${ICONS}
 <script>
 (function () {
   var langs = ${JSON.stringify(LANGS)}, hosts = ${JSON.stringify(HOSTS)}, pick;
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});
   for (var l in hosts) if (hosts[l] === location.hostname) { location.replace("/" + l + "/"); return; }
   try { pick = localStorage.getItem("lang"); } catch (e) {}
   if (langs.indexOf(pick) < 0) {
@@ -357,6 +359,101 @@ ${ICONS}
 ${LANGS.map((l) => `<p><a href="/${l}/" lang="${l}">${esc(i18n[l].siteTitle)} (${esc(i18n[l].name)})</a></p>`).join("\n")}
 </body>
 </html>
+`);
+
+// ---------- service worker: a fallback when the site can't be reached ----------
+// Some networks block Cloudflare for hours at a time (Spanish providers do during LaLiga matches). The
+// service worker runs in the browser, so it still answers then: pages come from the network as usual,
+// each recipe page that loads is kept on the device, and when the network fails or takes too long it
+// shows the kept copy, or a page that explains what's going on and lists the recipes kept on this device.
+// It only helps a browser that has opened the site before. Logins still go through Cloudflare Access:
+// redirects to the login are passed through and never kept.
+
+const OFFLINE = Object.fromEntries(LANGS.map((l) => [l, {
+  title: i18n[l].offlineTitle, text: i18n[l].offlineText, retry: i18n[l].offlineRetry,
+  saved: i18n[l].offlineSaved, savedNote: i18n[l].offlineSavedNote, site: i18n[l].siteTitle,
+}]));
+write(join(OUT, "sw.js"), `// Built ${new Date().toISOString()}. See the template's build.mjs for what this does.
+const PAGES = "pages-v1", FILES = "files-v1", TIMEOUT_MS = 6000;
+const LANGS = ${JSON.stringify(LANGS)}, HOSTS = ${JSON.stringify(HOSTS)}, TEXT = ${JSON.stringify(OFFLINE)};
+
+self.addEventListener("install", () => self.skipWaiting());
+self.addEventListener("activate", (e) => e.waitUntil(self.clients.claim()));
+
+function withTimeout(promise) {
+  return Promise.race([promise, new Promise((_, no) => setTimeout(() => no(new Error("timeout")), TIMEOUT_MS))]);
+}
+const keepable = (res) => res && res.ok && res.type === "basic" && !res.redirected;
+
+function langFor(url) {
+  const first = url.pathname.split("/")[1];
+  if (LANGS.includes(first)) return first;
+  for (const l in HOSTS) if (HOSTS[l] === url.hostname) return l;
+  return LANGS[0];
+}
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+async function savedRecipes(lang) {
+  const cache = await caches.open(PAGES), out = [];
+  for (const req of await cache.keys()) {
+    const path = new URL(req.url).pathname;
+    if (!new RegExp("^/" + lang + "/[^/]+/(algorithmic/)?$").test(path) || path === "/" + lang + "/rules/") continue;
+    const html = await (await cache.match(req)).text();
+    const title = (html.match(/<title>([^<]*)<\\/title>/) || [, path])[1].trim();
+    out.push({ path, title });
+  }
+  return out.sort((a, b) => a.title.localeCompare(b.title));
+}
+
+async function offlinePage(url) {
+  const lang = langFor(url), t = TEXT[lang], saved = await savedRecipes(lang);
+  const list = saved.length
+    ? \`<h2>\${esc(t.saved)}</h2><p class="note">\${esc(t.savedNote)}</p><ul>\${saved.map((r) => \`<li><a href="\${r.path}">\${esc(r.title)}</a></li>\`).join("")}</ul>\`
+    : "";
+  return new Response(\`<!doctype html><html lang="\${lang}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>\${esc(t.site)}</title><style>
+:root{color-scheme:light dark;--bg:#f7f0e6;--fg:#2a221b;--muted:#6f6357;--accent:#9a5a1f}
+@media (prefers-color-scheme:dark){:root{--bg:#231d18;--fg:#f1e8dc;--muted:#b3a696;--accent:#e2a66b}}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:56px 20px}h1{font:600 2rem/1.15 Georgia,serif;margin:0 0 16px}
+h2{font-size:1rem;margin:40px 0 4px}.note{color:var(--muted);font-size:.9rem;margin:0 0 8px}a{color:var(--accent)}
+button{font:inherit;font-weight:600;padding:10px 18px;border-radius:999px;border:0;background:var(--accent);color:var(--bg);cursor:pointer}
+ul{padding-left:1.1em}li{margin:6px 0}</style></head><body><main>
+<h1>\${esc(t.title)}</h1><p>\${esc(t.text)}</p><p><button onclick="location.reload()">\${esc(t.retry)}</button></p>\${list}
+</main></body></html>\`, { status: 503, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
+}
+
+self.addEventListener("fetch", (event) => {
+  const req = event.request, url = new URL(req.url);
+  if (req.method !== "GET" || url.origin !== self.location.origin || url.pathname === "/sw.js") return;
+
+  if (req.mode === "navigate") {
+    event.respondWith((async () => {
+      try {
+        const res = await withTimeout(fetch(req));
+        if (keepable(res)) { const copy = res.clone(); caches.open(PAGES).then((c) => c.put(req, copy)); }
+        return res;
+      } catch (e) {
+        return (await caches.match(req, { cacheName: PAGES, ignoreSearch: true })) || offlinePage(url);
+      }
+    })());
+    return;
+  }
+
+  // Photos, search files and the like: network first, the kept copy if that fails.
+  event.respondWith((async () => {
+    try {
+      const res = await withTimeout(fetch(req));
+      if (keepable(res)) { const copy = res.clone(); caches.open(FILES).then((c) => c.put(req, copy)); }
+      return res;
+    } catch (e) {
+      const kept = await caches.match(req, { cacheName: FILES });
+      if (kept) return kept;
+      throw e;
+    }
+  })());
+});
 `);
 
 console.log(`Built ${recipes.length} recipes: ${recipes.map((r) => `${r.id} [${Object.keys(r.versions).join(", ")}]`).join("; ")}`);
