@@ -118,7 +118,12 @@ const hostScript = `<script>
   if (!on) return;
   if (hosts[lang] && hosts[lang] !== here) { location.replace("https://" + hosts[lang] + location.pathname + location.search + location.hash); return; }
   var framed = window.top !== window;
-  if (!framed && entries[lang] && /[?&]entry=1(&|$)/.test(location.search)) {
+  // An entry page that sends the visitor here to log in leaves a short-lived "recipes_entry" cookie on the
+  // shared parent domain (a query string doesn't always survive the Access login), or ?entry=1.
+  var back = /(?:^|;\\s*)recipes_entry=1/.test(document.cookie), query = /[?&]entry=1(&|$)/.test(location.search);
+  if (!framed && entries[lang] && (back || query)) {
+    var parentDomain = entries[lang].replace(/^[^.]+\\./, "");
+    document.cookie = "recipes_entry=; domain=" + parentDomain + "; path=/; max-age=0; secure; samesite=lax";
     var rest = location.search.replace(/([?&])entry=1(&|$)/, "$1").replace(/[?&]$/, "");
     location.replace("https://" + entries[lang] + location.pathname + rest + location.hash);
     return;
