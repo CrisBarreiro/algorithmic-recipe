@@ -79,6 +79,8 @@ Everything here is optional.
 
 With a `host` per language, each language lives on its own address and the EN / ES switch jumps between them. On any other address (like the `*.pages.dev` one) everything works from one host.
 
+An `entry` per language (such as `"entry": "recetas.example.com"`) is for a public entry page hosted off Cloudflare that shows the site in a frame, so the site keeps the entry address and the entry page can explain when Cloudflare is unreachable. Framed, every page sends the entry page its path and title (`postMessage`, only to the `entry` origins), and links to other sites open in a new tab. `/session.svg` is a small image behind Access that the entry page loads to tell whether the visitor is logged in; if not, it opens the site as a full page with `?entry=1` for the login, and the site sends the visitor back to the entry address afterwards. The `_headers` `frame-ancestors` rule must list the entry hosts.
+
 ## Addresses
 
 | Address | What it is |

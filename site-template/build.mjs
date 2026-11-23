@@ -95,6 +95,8 @@ const siteCss = [join(DESIGN, "tokens.css"), join(DESIGN, "components.css"), joi
 const ICONS = `<link rel="icon" href="/brand/icon.svg" type="image/svg+xml"><link rel="icon" href="/brand/icon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">`;
 const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Roboto:wght@400;500;700&display=swap">`;
 // The skills' own font links; Paper brings its fonts.
+// A tiny image behind Access: an entry page loads it to tell whether the visitor is logged in.
+copyFileSync(join(ASSETS, "brand", "icon.svg"), join(OUT, "session.svg"));
 const SKILL_FONTS = /<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>\s*/g;
 // The gluten-free and dairy-free rules page: the same rules as the gluten-free-recipe and dairy-free-recipe
 // skills. Your own rules.json replaces them; "rules": false in site.config.json turns the page off.
@@ -103,19 +105,43 @@ const RULES = config.rules === false ? {} : readJson(mine("rules.json") || join(
 // recetas.example.com for Spanish. On those hosts each language lives on its own address and the
 // EN | ES switch jumps between them. On any other host (like *.pages.dev) everything stays on one host.
 const HOSTS = Object.fromEntries(LANGS.filter((l) => i18n[l].host).map((l) => [l, i18n[l].host]));
+// Optional public entry page per language ("entry" in site.config.json i18n), e.g. recetas.example.com, a
+// page off Cloudflare that shows this site in a frame (see site-template/README.md). Framed, each page tells
+// the entry page where it is, so its address bar follows along, and links to other sites open in a new tab.
+// After a full-page login that started on an entry page (?entry=1), the visitor is sent back to it.
+const ENTRIES = Object.fromEntries(LANGS.filter((l) => i18n[l].entry).map((l) => [l, i18n[l].entry]));
 const hostScript = `<script>
 (function () {
-  var hosts = ${JSON.stringify(HOSTS)}, here = location.hostname, lang = document.documentElement.lang, on = false;
+  var hosts = ${JSON.stringify(HOSTS)}, entries = ${JSON.stringify(ENTRIES)}, here = location.hostname, lang = document.documentElement.lang, on = false;
   for (var l in hosts) if (hosts[l] === here) on = true;
   try { localStorage.setItem("lang", lang); } catch (e) {}
   if (!on) return;
-  if (hosts[lang] && hosts[lang] !== here) { location.replace("https://" + hosts[lang] + location.pathname + location.search); return; }
+  if (hosts[lang] && hosts[lang] !== here) { location.replace("https://" + hosts[lang] + location.pathname + location.search + location.hash); return; }
+  var framed = window.top !== window;
+  if (!framed && entries[lang] && /[?&]entry=1(&|$)/.test(location.search)) {
+    var rest = location.search.replace(/([?&])entry=1(&|$)/, "$1").replace(/[?&]$/, "");
+    location.replace("https://" + entries[lang] + location.pathname + rest + location.hash);
+    return;
+  }
+  function tell() {
+    var msg = { type: "recipes:page", lang: lang, path: location.pathname + location.search + location.hash, title: document.title };
+    var to = location.ancestorOrigins && location.ancestorOrigins[0];
+    for (var e in entries) if (!to || to === "https://" + entries[e]) try { parent.postMessage(msg, "https://" + entries[e]); } catch (err) {}
+  }
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("a[hreflang]").forEach(function (a) {
       var h = hosts[a.getAttribute("hreflang")];
       if (h && h !== here) a.href = "https://" + h + a.getAttribute("href");
     });
+    if (!framed) return;
+    var mine = {};
+    for (var l in hosts) mine[hosts[l]] = true;
+    document.querySelectorAll("a[href]").forEach(function (a) {
+      if (/^https?:$/.test(a.protocol) && !mine[a.hostname] && a.hostname !== here) { a.target = "_blank"; a.rel = "noopener"; }
+    });
+    tell();
   });
+  if (framed) window.addEventListener("hashchange", tell);
 })();
 </script>`;
 const langScript = hostScript;
