@@ -1,9 +1,9 @@
 # Paper
 
 The look of the recipe site, kept apart from the site so another project can use it. It's
-[Pillbox](https://github.com/CrisBarreiro/Pillbox)'s "Calm & crafted" style moved to the web, in a caramel
-palette for baking: oat paper, a toffee brown accent, a toasted brown dark mode, Fraunces for titles and Roboto
-for text.
+[Pillbox](https://github.com/CrisBarreiro/Pillbox)'s "Calm & crafted" style moved to the web, in a small caramel
+palette for baking: oat paper with cream on it, a toffee brown accent, a toasted brown dark mode, Fraunces for
+titles and Roboto for text.
 
 | File | What it is |
 | --- | --- |
@@ -30,19 +30,19 @@ Print is always light. To use only the colours, take `tokens.css` alone.
 
 ## Tokens
 
+Eight colours in each theme: the oat page, one cream for anything that sits on it, two text tones, two line
+tones and one caramel accent. A new need takes one of these rather than a new tone.
+
 | Token | Light | Dark | Use |
 | --- | --- | --- | --- |
 | `--paper` | `#F6F0E6` | `#2B241D` | Page |
-| `--card` | `#FFFAF2` | `#3A3129` | A surface a step off the page (search box, algorithmic cells) |
-| `--card-2` | `#EEE4D4` | `#332B23` | A quieter fill (photo placeholders, sticky column) |
+| `--card` | `#FFFAF2` | `#3A3129` | Cream: everything that sits on the page (search box, boxes, notes, photo placeholders) |
 | `--ink` | `#2A2118` | `#F1E8DC` | Text |
 | `--muted` | `#66584A` | `#CDBFAE` | Secondary text, labels |
-| `--outline` | `#8F8070` | `#9C8E7D` | Borders of controls |
-| `--rule` | `#E3D7C5` | `#4D4236` | Hairlines |
-| `--accent` | `#9A5B22` | `#E9B27A` | Caramel: links, current tab, step numbers, eyebrows |
+| `--outline` | `#8F8070` | `#9C8E7D` | Borders of controls (chips, search box) |
+| `--rule` | `#E3D7C5` | `#4D4236` | Hairlines and the edges of boxes |
+| `--accent` | `#9A5B22` | `#E9B27A` | Caramel: links, current tab, step numbers, eyebrows, a chip that's on |
 | `--on-accent` | `#FFFFFF` | `#4A2805` | Text on a filled accent |
-| `--accent-soft` | `#F7DDBE` | `#6B4320` | A selected chip |
-| `--on-accent-soft` | `#3A1F06` | `#FBE3C6` | Text on `--accent-soft` |
 
 Type: `--font-display` (Fraunces, for titles and the facts strip), `--font-body` (Roboto), sizes `--text-xs`
 12px to `--text-l` 16px and `--title-s`, `--title-m`, `--title-l`. Space: `--space-1` to `--space-6`
@@ -87,7 +87,7 @@ A back link and tab groups on a hairline. The current tab is underlined in the a
 
 ### Chips
 
-Filters you switch on and off; the one that's on is filled and ticked.
+Filters you switch on and off; the one that's on is filled in caramel and ticked.
 
 ```html
 <div class="chips" role="group"><button type="button" aria-pressed="true">All</button><button type="button" aria-pressed="false">Baking</button></div>

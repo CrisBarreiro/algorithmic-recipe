@@ -1,24 +1,23 @@
 /* Paper: design tokens.
-   Pillbox's "Calm & crafted" layout (warm paper, slightly whiter cards) in a caramel palette for baking:
-   oat paper, a toffee brown accent and a toasted brown dark mode, Fraunces for titles and Roboto for text.
+   Pillbox's "Calm & crafted" layout in a small caramel palette for baking: oat paper, one cream for
+   everything that sits on it, two text tones, two line tones and one toffee brown accent, with a toasted
+   brown dark mode. Fraunces for titles and Roboto for text.
+   Keep it small: a new need takes one of these colours rather than a new one.
    Self-contained: copy this file (and components.css if you want the components) into any project.
    Every colour is defined on bare :root first; the two dark blocks only redefine them; print is always light. */
 
 :root{
-  /* surfaces */
+  /* surfaces: the page, and one cream for anything on it (boxes, notes, search, photo placeholders) */
   --paper:#F6F0E6;        /* page: oat */
-  --card:#FFFAF2;         /* a surface slightly whiter than the page */
-  --card-2:#EEE4D4;       /* a quieter surface, for filled chips and table bands */
+  --card:#FFFAF2;         /* cream, slightly whiter than the page */
   /* text and lines */
   --ink:#2A2118;
   --muted:#66584A;
   --outline:#8F8070;      /* borders of controls */
   --rule:#E3D7C5;         /* hairlines */
-  /* the accent: caramel */
+  /* the accent: caramel, for text, lines and the one filled control (a chip that's on) */
   --accent:#9A5B22;
   --on-accent:#FFFFFF;
-  --accent-soft:#F7DDBE;
-  --on-accent-soft:#3A1F06;
 
   /* type */
   --font-display:"Fraunces",Georgia,"Times New Roman",serif;
@@ -33,17 +32,17 @@
   --page-width:960px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#2B241D; --card:#3A3129; --card-2:#332B23;
+  --paper:#2B241D; --card:#3A3129;
   --ink:#F1E8DC; --muted:#CDBFAE; --outline:#9C8E7D; --rule:#4D4236;
-  --accent:#E9B27A; --on-accent:#4A2805; --accent-soft:#6B4320; --on-accent-soft:#FBE3C6;
+  --accent:#E9B27A; --on-accent:#4A2805;
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#2B241D; --card:#3A3129; --card-2:#332B23;
+  --paper:#2B241D; --card:#3A3129;
   --ink:#F1E8DC; --muted:#CDBFAE; --outline:#9C8E7D; --rule:#4D4236;
-  --accent:#E9B27A; --on-accent:#4A2805; --accent-soft:#6B4320; --on-accent-soft:#FBE3C6;
+  --accent:#E9B27A; --on-accent:#4A2805;
   color-scheme:dark}
 @media print{:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{
-  --paper:#FFFFFF; --card:#FFFFFF; --card-2:#F4EEE4;
+  --paper:#FFFFFF; --card:#FFFFFF;
   --ink:#2A2118; --muted:#66584A; --outline:#8F8070; --rule:#D9CCB9;
-  --accent:#9A5B22; --on-accent:#FFFFFF; --accent-soft:#F7DDBE; --on-accent-soft:#3A1F06;
+  --accent:#9A5B22; --on-accent:#FFFFFF;
   color-scheme:light}}
