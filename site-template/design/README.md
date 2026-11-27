@@ -54,11 +54,12 @@ Every accent passes 4.5:1 contrast on the page in both themes.
 
 ## Icon
 
-A cinnamon roll seen from above: the caramel swirl (`--accent`, `#9A5B22`) on a golden baked square
-(`#E2AE6E`). The swirl is traced from a photo of one of Cris's own rolls, smoothed, thickened and filling most of the square, so its
-curves and two turns are a real roll's. One drawing at every size, in `assets/brand/`: `logo.svg` and `logo.png`
-(512px, the login page), `icon.svg` and `icon-32.png` (the favicon), and `apple-touch-icon.png` (180px, square
-corners, since phones round them).
+A cinnamon roll seen from above, asleep, in the family of Cris's Pillbox and Stronk icons: on their Dusk
+background (`#2D2E29`), flat shapes with no outlines, a character with closed eyes and a small smile, tucked in,
+with one small light. The roll is golden (`#E2AE6E`) with a caramel swirl (`--accent`, `#9A5B22`) that starts
+low on the left and winds round the face, and cream icing (`#F5F3EE`) pulled up over it like a duvet. One drawing at
+every size, in `assets/brand/`: `logo.svg` and `logo.png` (512px, the login page), `icon.svg` and `icon-32.png` (the
+favicon), and `apple-touch-icon.png` (180px, square corners, since phones round them).
 
 ![The icon at 180, 64, 32 and 16px](screenshots/icon.png)
 

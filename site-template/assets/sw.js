@@ -1,4 +1,4 @@
-const CACHE = "recipe-site-v1";
+const CACHE = "recipe-site-v2";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
