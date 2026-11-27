@@ -1,6 +1,6 @@
 # Agent guide
 
-Instructions for agents installing or working on [algorithmic-recipe](https://github.com/CrisBarreiro/algorithmic-recipe). The plugin holds four recipe skills (`algorithmic-recipe`, `cookbook-recipe`, `gluten-free-recipe`, `dairy-free-recipe`) plus rules they share in `skills/_shared/`. What each skill does lives in its `SKILL.md`; this file only covers how to install them and where things are.
+Instructions for agents installing or working on [baking-plugin](https://github.com/CrisBarreiro/baking-plugin). The plugin holds four recipe skills (`algorithmic-recipe`, `cookbook-recipe`, `gluten-free-recipe`, `dairy-free-recipe`) plus rules they share in `skills/_shared/`. What each skill does lives in its `SKILL.md`; this file only covers how to install them and where things are.
 
 ## Install
 

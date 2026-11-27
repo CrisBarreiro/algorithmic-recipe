@@ -1,8 +1,8 @@
 {
-  "name": "algorithmic-recipe",
-  "version": "0.8.2",
+  "name": "baking-plugin",
+  "version": "0.9.0",
   "private": true,
-  "description": "Site template for a private recipe site built from the algorithmic-recipe skills' pages.",
+  "description": "Site template for a private recipe site built from the baking-plugin skills' pages.",
   "type": "module",
   "bin": {
     "recipe-site": "site-template/build.mjs"
