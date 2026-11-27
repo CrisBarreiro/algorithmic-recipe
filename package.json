@@ -1,6 +1,6 @@
 {
   "name": "algorithmic-recipe",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "description": "Site template for a private recipe site built from the algorithmic-recipe skills' pages.",
   "type": "module",
