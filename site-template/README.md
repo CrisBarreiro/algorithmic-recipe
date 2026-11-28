@@ -33,7 +33,7 @@ site.config.json           optional settings (below)
     "preview": "npm run build && npx --yes serve@14.2.4 dist"
   },
   "devDependencies": {
-    "algorithmic-recipe": "github:CrisBarreiro/algorithmic-recipe#main",
+    "baking-plugin": "github:CrisBarreiro/baking-plugin#main",
     "pagefind": "1.3.0"
   }
 }
@@ -42,10 +42,10 @@ site.config.json           optional settings (below)
 `functions/_middleware.js`:
 
 ```js
-export { onRequest } from "algorithmic-recipe/site-template/functions/_middleware.js";
+export { onRequest } from "baking-plugin/site-template/functions/_middleware.js";
 ```
 
-`npm install` pins the template to the commit it fetched, in `package-lock.json`. To take a newer version, run `npm install github:CrisBarreiro/algorithmic-recipe#main` and commit the lockfile.
+`npm install` pins the template to the commit it fetched, in `package-lock.json`. To take a newer version, run `npm install github:CrisBarreiro/baking-plugin#main` and commit the lockfile.
 
 The `example/` folder here is a working site with one recipe: `npm run example` from the repo root builds it into `example/dist/`.
 

@@ -110,7 +110,7 @@ A grid of links with a photo, set on the page rather than in boxes.
 ### Recipe
 
 The page the `cookbook-recipe` skill writes (from
-[algorithmic-recipe](https://github.com/CrisBarreiro/algorithmic-recipe)), styled by its own class names, so
+[baking-plugin](https://github.com/CrisBarreiro/baking-plugin)), styled by its own class names, so
 the skill's `<main>` only needs `class="recipe"` (and `has-photo` when it has a photo) and its own
 `<style>` taken out. It lays out:
 

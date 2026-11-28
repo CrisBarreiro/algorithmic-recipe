@@ -1,4 +1,4 @@
-# algorithmic-recipe
+# baking-plugin
 
 Turn any recipe into a page you can actually cook from, and make it gluten-free or dairy-free on the way.
 
@@ -29,7 +29,7 @@ Ingredients are listed down the left in the order you add them. Each step sits t
 
 ![Espresso brownies as an algorithmic recipe](assets/espresso-brownies.png)
 
-See the [full espresso brownies page](https://crisbarreiro.com/algorithmic-recipe/examples/espresso-brownies.html) behind the screenshot above (source in [`examples/espresso-brownies.html`](examples/espresso-brownies.html)).
+See the [full espresso brownies page](https://crisbarreiro.com/baking-plugin/examples/espresso-brownies.html) behind the screenshot above (source in [`examples/espresso-brownies.html`](examples/espresso-brownies.html)).
 
 ## Cookbook layout
 
@@ -65,14 +65,14 @@ Source in [`examples/espresso-brownies-cookbook.html`](examples/espresso-brownie
 Ask your agent:
 
 ```
-Install the algorithmic-recipe skill from https://github.com/CrisBarreiro/algorithmic-recipe, refer to the repo's AGENTS.md for instructions.
+Install the baking-plugin skills from https://github.com/CrisBarreiro/baking-plugin, refer to the repo's AGENTS.md for instructions.
 ```
 
 Or in Claude Code:
 
 ```bash
-claude plugin marketplace add CrisBarreiro/algorithmic-recipe
-claude plugin install algorithmic-recipe@algorithmic-recipe
+claude plugin marketplace add CrisBarreiro/baking-plugin
+claude plugin install baking-plugin@baking-plugin
 ```
 
 See [INSTALL.md](INSTALL.md) for installing without the plugin system, on Claude.ai, and for updating or uninstalling.
@@ -90,7 +90,7 @@ Claude also loads the skill on its own when you ask to "rewrite this recipe as a
 ## Repo layout
 
 ```
-algorithmic-recipe/
+baking-plugin/
 ├── README.md
 ├── INSTALL.md                every install route
 ├── AGENTS.md                 install guidance for agents

@@ -309,7 +309,7 @@ ${usedTags.map((x) => `<button type="button" aria-pressed="false" data-tag="${x}
 <ul class="cards">
 ${cards}
 </ul>
-${config.skillsBox === false ? "" : `<aside class="skills-note"><h2>${esc(t.skillsTitle)}</h2><p>${esc(t.skillsText)}</p><p><a href="https://github.com/CrisBarreiro/algorithmic-recipe">${esc(t.skillsLink)} →</a></p></aside>`}
+${config.skillsBox === false ? "" : `<aside class="skills-note"><h2>${esc(t.skillsTitle)}</h2><p>${esc(t.skillsText)}</p><p><a href="https://github.com/CrisBarreiro/baking-plugin">${esc(t.skillsLink)} →</a></p></aside>`}
 </main>
 <script src="/pagefind/pagefind-ui.js"></script>
 <script>
